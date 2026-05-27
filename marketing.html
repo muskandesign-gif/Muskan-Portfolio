@@ -26,8 +26,14 @@
     padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 64px;
   }
   .nav-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--text-dark); text-decoration: none; }
-  .nav-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 7px 16px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
-  .nav-back:hover { border-color: var(--gold); color: var(--brown); background: var(--gold-pale); }
+  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 20px; transition: all 0.2s; }
+  .nav-links a:hover { background: var(--gold-light); color: var(--brown); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-dark); }
+  .mobile-menu { display: none; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 5vw; gap: 4px; }
+  .mobile-menu a { font-size: 14px; color: var(--text-mid); text-decoration: none; padding: 8px 0; font-weight: 500; border-bottom: 1px solid var(--border); }
+  .mobile-menu.open { display: flex; }
+  @media (max-width: 768px) { .nav-links { display: none; } .nav-toggle { display: block; } }
 
   /* HERO */
   .page-hero {
@@ -84,12 +90,29 @@
 
 <nav>
   <a href="muskan_portfolio%20f3.html" class="nav-name">Muskan Shah</a>
-  <a href="muskan_portfolio%20f3.html#marketing" class="nav-back">← Back to Portfolio</a>
+  <div class="nav-links" id="navLinks">
+    <a href="muskan_portfolio%20f3.html#uiux">UI/UX</a>
+    <a href="marketing.html" style="background:var(--gold-pale);color:var(--brown);">Marketing</a>
+    <a href="muskan_portfolio%20f3.html#ecommerce">E-Commerce Design</a>
+    <a href="muskan_portfolio%20f3.html#canva">Canva Design</a>
+    <a href="muskan_portfolio%20f3.html#about">About</a>
+    <a href="muskan_portfolio%20f3.html#contact">Contact</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="muskan_portfolio%20f3.html#uiux" onclick="closeMobile()">UI/UX</a>
+  <a href="marketing.html" onclick="closeMobile()">Marketing</a>
+  <a href="muskan_portfolio%20f3.html#ecommerce" onclick="closeMobile()">E-Commerce Design</a>
+  <a href="muskan_portfolio%20f3.html#canva" onclick="closeMobile()">Canva Design</a>
+  <a href="muskan_portfolio%20f3.html#about" onclick="closeMobile()">About</a>
+  <a href="muskan_portfolio%20f3.html#contact" onclick="closeMobile()">Contact</a>
+</div>
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
+    <div class="hero-label">Social Media Marketing</div>
     <h1>Client <em>Work</em><br>Platform by Platform.</h1>
     <p>A curated view of brands I've managed, grown, and storytold across Instagram, LinkedIn, and Pinterest — spanning real estate, fashion, events, beauty, and more.</p>
   </div>
@@ -134,7 +157,7 @@
       <div class="client-info">
         <div class="client-name">Kaushik Outdoors</div>
         <div class="client-handle">@kaushikoutdoors</div>
-        <div class="client-industry">Outdoor Publicity · 18K Followers</div>
+        <div class="client-industry">OOH Advertising · 18K Followers</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -154,7 +177,7 @@
       <div class="client-info">
         <div class="client-name">Aash Haute Couture</div>
         <div class="client-handle">@aash.hautecouture</div>
-        <div class="client-industry">Couture</div>
+        <div class="client-industry">Fashion · Couture</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -164,7 +187,7 @@
       <div class="client-info">
         <div class="client-name">The Citadel AMD</div>
         <div class="client-handle">@thecitadelamd</div>
-        <div class="client-industry">Real Estate · Commercial</div>
+        <div class="client-industry">Lifestyle & Hospitality</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -174,7 +197,7 @@
       <div class="client-info">
         <div class="client-name">Choice ProBeauty</div>
         <div class="client-handle">@choice_probeauty</div>
-        <div class="client-industry">Beauty</div>
+        <div class="client-industry">Beauty Distribution</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -184,7 +207,7 @@
       <div class="client-info">
         <div class="client-name">Nom Ratri</div>
         <div class="client-handle">@nomratri</div>
-        <div class="client-industry">Garba Events</div>
+        <div class="client-industry">Events & Culture</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -194,7 +217,7 @@
       <div class="client-info">
         <div class="client-name">After Ratri</div>
         <div class="client-handle">@after.ratri</div>
-        <div class="client-industry">Garba Events</div>
+        <div class="client-industry">Events & Nightlife</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -204,7 +227,7 @@
       <div class="client-info">
         <div class="client-name">Caryanams</div>
         <div class="client-handle">@caryanams</div>
-        <div class="client-industry">Car Buy & Sell</div>
+        <div class="client-industry">Brand & Lifestyle</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -277,9 +300,9 @@
     <a href="https://pin.it/6Pwtnvj1S" target="_blank" class="client-card">
       <div class="client-avatar" style="background: linear-gradient(135deg, #E60023, #AD081B);">P</div>
       <div class="client-info">
-        <div class="client-name">EventBazaar.com</div>
+        <div class="client-name">Client Pinterest Board</div>
         <div class="client-handle">pin.it/6Pwtnvj1S</div>
-        <div class="client-industry">Event Marketplace</div>
+        <div class="client-industry">Visual Curation & Strategy</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -289,5 +312,11 @@
 
 <div class="footer-bar">© 2026 Muskan Shah · Designed with intention in Ahmedabad, Gujarat.</div>
 
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+</script>
 </body>
 </html>
