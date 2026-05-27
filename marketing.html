@@ -77,14 +77,6 @@
   .client-card:hover .client-arrow { color: var(--brown); }
 
   /* AND MORE PILL */
-  .nav-links { display: flex; gap: 6px; align-items: center; }
-  .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 20px; transition: all 0.2s; }
-  .nav-links a:hover { background: var(--gold-light); color: var(--brown); }
-  .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-dark); }
-  .mobile-menu { display: none; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 5vw; gap: 4px; }
-  .mobile-menu a { font-size: 14px; color: var(--text-mid); text-decoration: none; padding: 8px 0; font-weight: 500; border-bottom: 1px solid var(--border); }
-  .mobile-menu.open { display: flex; }
-  @media (max-width: 768px) { .nav-links { display: none; } .nav-toggle { display: block; } }
   .and-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--text-soft); padding: 8px 18px; border-radius: 20px; background: var(--cream2); border: 1px dashed var(--cream3); }
 
   /* FOOTER */
@@ -120,7 +112,6 @@
 <!-- HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="hero-label">Social Media Marketing</div>
     <h1>Client <em>Work</em><br>Platform by Platform.</h1>
     <p>A curated view of brands I've managed, grown, and storytold across Instagram, LinkedIn, and Pinterest — spanning real estate, fashion, events, beauty, and more.</p>
   </div>
@@ -308,9 +299,9 @@
     <a href="https://pin.it/6Pwtnvj1S" target="_blank" class="client-card">
       <div class="client-avatar" style="background: linear-gradient(135deg, #E60023, #AD081B);">P</div>
       <div class="client-info">
-        <div class="client-name">Client Pinterest Board</div>
+        <div class="client-name">EventBazaar.com</div>
         <div class="client-handle">pin.it/6Pwtnvj1S</div>
-        <div class="client-industry">Visual Curation & Strategy</div>
+        <div class="client-industry">Event Marketplace</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -325,12 +316,6 @@
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   function closeMobile() { mobileMenu.classList.remove('open'); }
-</script>
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if(navToggle) navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobile() { if(mobileMenu) mobileMenu.classList.remove('open'); }
 </script>
 </body>
 </html>
