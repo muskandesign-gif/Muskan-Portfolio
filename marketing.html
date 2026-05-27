@@ -77,6 +77,14 @@
   .client-card:hover .client-arrow { color: var(--brown); }
 
   /* AND MORE PILL */
+  .nav-links { display: flex; gap: 6px; align-items: center; }
+  .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 20px; transition: all 0.2s; }
+  .nav-links a:hover { background: var(--gold-light); color: var(--brown); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-dark); }
+  .mobile-menu { display: none; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 5vw; gap: 4px; }
+  .mobile-menu a { font-size: 14px; color: var(--text-mid); text-decoration: none; padding: 8px 0; font-weight: 500; border-bottom: 1px solid var(--border); }
+  .mobile-menu.open { display: flex; }
+  @media (max-width: 768px) { .nav-links { display: none; } .nav-toggle { display: block; } }
   .and-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--text-soft); padding: 8px 18px; border-radius: 20px; background: var(--cream2); border: 1px dashed var(--cream3); }
 
   /* FOOTER */
@@ -157,7 +165,7 @@
       <div class="client-info">
         <div class="client-name">Kaushik Outdoors</div>
         <div class="client-handle">@kaushikoutdoors</div>
-        <div class="client-industry">OOH Advertising · 18K Followers</div>
+        <div class="client-industry">Outdoor Publicity · 18K Followers</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -177,7 +185,7 @@
       <div class="client-info">
         <div class="client-name">Aash Haute Couture</div>
         <div class="client-handle">@aash.hautecouture</div>
-        <div class="client-industry">Fashion · Couture</div>
+        <div class="client-industry">Couture Fashion</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -187,7 +195,7 @@
       <div class="client-info">
         <div class="client-name">The Citadel AMD</div>
         <div class="client-handle">@thecitadelamd</div>
-        <div class="client-industry">Lifestyle & Hospitality</div>
+        <div class="client-industry">Real Estate · Commercial</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -207,7 +215,7 @@
       <div class="client-info">
         <div class="client-name">Nom Ratri</div>
         <div class="client-handle">@nomratri</div>
-        <div class="client-industry">Events & Culture</div>
+        <div class="client-industry">Garba Events</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -217,7 +225,7 @@
       <div class="client-info">
         <div class="client-name">After Ratri</div>
         <div class="client-handle">@after.ratri</div>
-        <div class="client-industry">Events & Nightlife</div>
+        <div class="client-industry">Garba Events</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -227,7 +235,7 @@
       <div class="client-info">
         <div class="client-name">Caryanams</div>
         <div class="client-handle">@caryanams</div>
-        <div class="client-industry">Brand & Lifestyle</div>
+        <div class="client-industry">Car Buy & Sell</div>
       </div>
       <span class="client-arrow">↗</span>
     </a>
@@ -317,6 +325,12 @@
   const mobileMenu = document.getElementById('mobileMenu');
   navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   function closeMobile() { mobileMenu.classList.remove('open'); }
+</script>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(navToggle) navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { if(mobileMenu) mobileMenu.classList.remove('open'); }
 </script>
 </body>
 </html>
