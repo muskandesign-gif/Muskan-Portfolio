@@ -9,10 +9,10 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --cream: #FAF7F2; --cream2: #F3EEE5; --cream3: #EDE5D8;
-    --gold: #C9A84C; --gold-light: #F5E6C0; --gold-pale: #FBF4E3;
-    --brown: #7A5C2E; --text-dark: #1A1410; --text-mid: #4A3F32;
-    --text-soft: #8A7A68; --border: rgba(122,92,46,0.15);
+    --cream: #ffffff; --cream2: #f0f1fb; --cream3: #d8daf5;
+    --gold: #1E28C5; --gold-light: #c8cbf0; --gold-pale: #eceeff;
+    --brown: #1E28C5; --text-dark: #1A1410; --text-mid: #4A3F32;
+    --text-soft: #8A7A68; --border: rgba(30,40,197,0.15);
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'DM Sans', sans-serif;
   }
@@ -107,7 +107,7 @@
   .marketing-marquee:hover { animation-play-state: paused; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .m-pill { white-space: nowrap; padding: 10px 20px; border-radius: 40px; font-size: 13px; font-weight: 500; border: 1px solid var(--cream3); background: white; color: var(--text-mid); }
-  .m-pill.gold { background: var(--gold-pale); border-color: rgba(201,168,76,0.3); color: var(--brown); }
+  .m-pill.gold { background: var(--gold-pale); border-color: rgba(30,40,197,0.3); color: var(--brown); }
   .marketing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .mktg-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
   .mktg-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(122,92,46,0.12); }
@@ -172,7 +172,7 @@
   .skills-pills { display: flex; flex-wrap: wrap; gap: 8px; }
   .s-pill { font-size: 12.5px; font-weight: 500; padding: 7px 16px; border-radius: 20px; border: 1px solid var(--cream3); background: white; color: var(--text-mid); transition: all 0.2s; }
   .s-pill:hover { background: var(--gold-pale); border-color: var(--gold); color: var(--brown); }
-  .outside-work-card { background: var(--gold-pale); border-radius: 20px; padding: 28px 30px; border: 1px solid rgba(201,168,76,0.25); margin-bottom: 28px; }
+  .outside-work-card { background: var(--gold-pale); border-radius: 20px; padding: 28px 30px; border: 1px solid rgba(30,40,197,0.25); margin-bottom: 28px; }
   .owc-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
   .owc-text { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
   .behance-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; padding: 12px 22px; border-radius: 30px; border: 1.5px solid var(--cream3); transition: all 0.25s; }
@@ -188,7 +188,7 @@
   .contact-email-link:hover { border-color: var(--gold); color: var(--gold); }
   .social-links { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
   .soc-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; text-decoration: none; padding: 11px 22px; border-radius: 30px; border: 1px solid rgba(250,247,242,0.2); color: rgba(250,247,242,0.8); transition: all 0.25s; }
-  .soc-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.08); }
+  .soc-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(30,40,197,0.08); }
   .footer-bar { background: var(--text-dark); text-align: center; padding: 24px 5vw; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12.5px; color: rgba(250,247,242,0.3); }
 
   .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -243,7 +243,7 @@
     <div style="position:relative; display:inline-block; width:100%;">
 
       <!-- Floating badges -->
-      <span style="position:absolute; top:0; left:5%; background:var(--gold-pale); border:1px solid rgba(201,168,76,0.4); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--brown); transform:rotate(-6deg); display:inline-block; white-space:nowrap;">UI/UX Design</span>
+      <span style="position:absolute; top:0; left:5%; background:var(--gold-pale); border:1px solid rgba(30,40,197,0.35); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--brown); transform:rotate(-6deg); display:inline-block; white-space:nowrap;">UI/UX Design</span>
       <span style="position:absolute; bottom:0; right:5%; background:var(--gold); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--cream); transform:rotate(4deg); display:inline-block; white-space:nowrap;">Creative</span>
 
       <!-- Hello + photo + name row -->
