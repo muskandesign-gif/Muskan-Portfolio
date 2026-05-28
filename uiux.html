@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI/UX Design — Muskan Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --cream:#FAF7F2; --cream2:#F3EEE5; --cream3:#EDE5D8;
+    --gold:#C9A84C; --gold-light:#F5E6C0; --gold-pale:#FBF4E3;
+    --brown:#7A5C2E; --text-dark:#1A1410; --text-mid:#4A3F32;
+    --text-soft:#8A7A68; --border:rgba(122,92,46,0.15);
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'DM Sans',sans-serif;
+  }
+  body { background:var(--cream); color:var(--text-dark); font-family:var(--sans); scroll-behavior:smooth; }
+
+  /* NAV */
+  nav { position:sticky; top:0; z-index:100; background:rgba(250,247,242,0.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:0 5vw; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-name { font-family:var(--serif); font-size:18px; font-weight:700; color:var(--text-dark); text-decoration:none; }
+  .nav-links { display:flex; gap:6px; align-items:center; }
+  .nav-links a { font-size:12.5px; font-weight:500; color:var(--text-mid); text-decoration:none; padding:5px 10px; border-radius:20px; transition:all 0.2s; }
+  .nav-links a:hover, .nav-links a.active { background:var(--gold-light); color:var(--brown); }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; font-size:22px; color:var(--text-dark); }
+  .mobile-menu { display:none; flex-direction:column; background:var(--cream); border-bottom:1px solid var(--border); padding:16px 5vw; gap:4px; }
+  .mobile-menu a { font-size:14px; color:var(--text-mid); text-decoration:none; padding:8px 0; font-weight:500; border-bottom:1px solid var(--border); }
+  .mobile-menu.open { display:flex; }
+  @media(max-width:768px){ .nav-links{display:none;} .nav-toggle{display:block;} }
+
+  /* PAGE HERO */
+  .page-hero { padding:80px 5vw 60px; background:var(--cream2); border-bottom:1px solid var(--border); }
+  .hero-label { font-size:11px; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .hero-label::after { content:''; width:40px; height:1px; background:var(--gold); }
+  .page-hero h1 { font-family:var(--serif); font-size:clamp(40px,6vw,72px); font-weight:900; line-height:1.05; letter-spacing:-2px; margin-bottom:20px; }
+  .page-hero h1 em { font-style:italic; color:var(--brown); }
+  .page-hero p { font-size:16px; color:var(--text-soft); max-width:520px; line-height:1.7; margin-bottom:40px; }
+
+  /* PROJECT NAV PILLS */
+  .project-nav { display:flex; gap:10px; flex-wrap:wrap; }
+  .project-pill { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:30px; border:1px solid var(--border); background:white; font-size:13px; font-weight:500; color:var(--text-mid); text-decoration:none; transition:all 0.2s; }
+  .project-pill:hover { border-color:var(--gold); color:var(--brown); background:var(--gold-pale); }
+  .project-pill .pill-num { font-size:10px; font-weight:600; color:var(--gold); }
+
+  /* CASE STUDY */
+  .case-study { padding:100px 5vw; border-bottom:1px solid var(--border); }
+  .case-study:nth-child(even) { background:var(--cream2); }
+
+  /* CS HEADER */
+  .cs-header { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; margin-bottom:70px; }
+  .cs-tag { font-size:11px; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .cs-tag::after { content:''; width:30px; height:1px; background:var(--gold); }
+  .cs-number { font-family:var(--serif); font-size:120px; font-weight:900; color:var(--cream3); line-height:1; margin-bottom:-20px; }
+  .cs-title { font-family:var(--serif); font-size:clamp(38px,5vw,58px); font-weight:900; line-height:1.05; letter-spacing:-1.5px; color:var(--text-dark); margin-bottom:16px; }
+  .cs-title em { font-style:italic; color:var(--brown); }
+  .cs-subtitle { font-size:15px; color:var(--text-soft); line-height:1.7; margin-bottom:28px; max-width:420px; }
+  .cs-meta { display:flex; flex-direction:column; gap:14px; }
+  .cs-meta-row { display:flex; flex-direction:column; gap:4px; }
+  .cs-meta-label { font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
+  .cs-meta-value { font-size:14px; font-weight:500; color:var(--text-dark); }
+  .cs-quote { background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:0 14px 14px 0; padding:24px 28px; margin-top:24px; }
+  .cs-quote p { font-family:var(--serif); font-size:17px; font-style:italic; color:var(--brown); line-height:1.65; }
+
+  /* HERO IMAGE */
+  .cs-hero-img { border-radius:20px; overflow:hidden; border:1px solid var(--border); background:var(--cream3); }
+  .cs-hero-img img { width:100%; display:block; }
+
+  /* PROCESS STEPS */
+  .cs-process { margin:70px 0; }
+  .cs-section-title { font-family:var(--serif); font-size:28px; font-weight:700; color:var(--text-dark); margin-bottom:32px; letter-spacing:-0.5px; }
+  .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .process-step { background:white; border:1px solid var(--border); border-radius:16px; padding:22px 20px; }
+  .process-step-num { font-family:var(--serif); font-size:32px; font-weight:900; color:var(--cream3); line-height:1; margin-bottom:8px; }
+  .process-step-title { font-size:14px; font-weight:600; color:var(--text-dark); margin-bottom:6px; }
+  .process-step-desc { font-size:12.5px; color:var(--text-soft); line-height:1.6; }
+
+  /* SCREENS */
+  .cs-screens { margin:70px 0; }
+  .screens-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px; }
+  .screens-grid-1 { display:grid; grid-template-columns:1fr; gap:24px; }
+  .screen-img { border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--cream3); }
+  .screen-img img { width:100%; display:block; }
+  .screen-caption { font-size:12px; color:var(--text-soft); text-align:center; margin-top:10px; }
+
+  /* KEY DECISIONS */
+  .cs-decisions { margin:70px 0; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+  .decisions-list { display:flex; flex-direction:column; gap:14px; }
+  .decision-item { display:flex; gap:14px; align-items:flex-start; padding:18px 20px; background:white; border-radius:14px; border:1px solid var(--border); }
+  .decision-dot { width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:6px; }
+  .decision-text { font-size:14px; color:var(--text-mid); line-height:1.6; }
+
+  /* IMPACT */
+  .cs-impact { margin:70px 0; background:var(--text-dark); border-radius:24px; padding:50px; }
+  .cs-impact .cs-section-title { color:var(--cream); }
+  .impact-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px; }
+  .impact-item { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 22px; }
+  .impact-text { font-size:14px; color:rgba(250,247,242,0.75); line-height:1.65; }
+  .cs-learning { background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); border-radius:14px; padding:24px 28px; }
+  .cs-learning p { font-family:var(--serif); font-size:16px; font-style:italic; color:var(--gold-light); line-height:1.7; }
+
+  /* PLACEHOLDER */
+  .cs-placeholder { background:var(--cream2); border:2px dashed var(--cream3); border-radius:20px; padding:60px 40px; text-align:center; }
+  .cs-placeholder h3 { font-family:var(--serif); font-size:28px; font-weight:700; color:var(--cream3); margin-bottom:12px; }
+  .cs-placeholder p { font-size:14px; color:var(--cream3); }
+
+  /* FOOTER */
+  .footer-bar { background:var(--text-dark); text-align:center; padding:24px 5vw; font-size:12.5px; color:rgba(250,247,242,0.3); }
+
+  @media(max-width:900px){
+    .cs-header { grid-template-columns:1fr; gap:30px; }
+    .process-grid { grid-template-columns:repeat(2,1fr); }
+    .cs-decisions { grid-template-columns:1fr; }
+    .impact-grid { grid-template-columns:1fr; }
+    .screens-grid-2 { grid-template-columns:1fr; }
+  }
+  @media(max-width:600px){ .process-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="muskan_portfolio%20f3.html" class="nav-name">Muskan Shah</a>
+  <div class="nav-links">
+    <a href="uiux.html" class="active">UI/UX</a>
+    <a href="marketing.html">Marketing</a>
+    <a href="muskan_portfolio%20f3.html#ecommerce">E-Commerce Design</a>
+    <a href="muskan_portfolio%20f3.html#canva">Canva Design</a>
+    <a href="muskan_portfolio%20f3.html#about">About</a>
+    <a href="muskan_portfolio%20f3.html#contact">Contact</a>
+  </div>
+  <button class="nav-toggle" id="navToggle">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="uiux.html">UI/UX</a>
+  <a href="marketing.html">Marketing</a>
+  <a href="muskan_portfolio%20f3.html#ecommerce">E-Commerce Design</a>
+  <a href="muskan_portfolio%20f3.html#canva">Canva Design</a>
+  <a href="muskan_portfolio%20f3.html#about">About</a>
+  <a href="muskan_portfolio%20f3.html#contact">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-label">Case Studies</div>
+  <h1>UI / UX <em>Design</em></h1>
+  <p>End-to-end product design — from research and wireframes through high-fidelity prototypes. All client names protected under NDA.</p>
+  <div class="project-nav">
+    <a href="#dentistry" class="project-pill"><span class="pill-num">01</span> Dentistry Clinic</a>
+    <a href="#hotel" class="project-pill"><span class="pill-num">02</span> Hotel Operations App</a>
+    <a href="#beauty" class="project-pill"><span class="pill-num">03</span> Beauty Rejuvenation Centre</a>
+    <a href="#mentalhealth" class="project-pill"><span class="pill-num">04</span> Mental Health Clinic</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CASE STUDY 01 — DENTISTRY                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="case-study" id="dentistry">
+  <div class="cs-header">
+    <div>
+      <div class="cs-tag">Case Study 01</div>
+      <div class="cs-number">01</div>
+      <h2 class="cs-title">Eternal Smiles —<br><em>Dentistry Clinic</em></h2>
+      <p class="cs-subtitle">Transforming a trusted local clinic into a modern, trust-driven digital experience that increases appointment bookings.</p>
+      <div class="cs-quote">
+        <p>"Rebrand the clinic and design a modern website that reflects professionalism, improves user experience, and increases appointment bookings."</p>
+      </div>
+    </div>
+    <div>
+      <div class="cs-meta">
+        <div class="cs-meta-row">
+          <span class="cs-meta-label">Client</span>
+          <span class="cs-meta-value">Eternal Smiles</span>
+        </div>
+        <div class="cs-meta-row">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-value">UI/UX Design · Web Redesign</span>
+        </div>
+        <div class="cs-meta-row">
+          <span class="cs-meta-label">Region</span>
+          <span class="cs-meta-value">USA · NDA Protected</span>
+        </div>
+        <div class="cs-meta-row">
+          <span class="cs-meta-label">Deliverables</span>
+          <span class="cs-meta-value">Research · UX · UI · Prototype · Testing</span>
+        </div>
+      </div>
+      <div class="cs-hero-img" style="margin-top:30px;">
+        <img src="assets/dentistry-0.png" alt="Dentistry clinic hero mockup" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="cs-process">
+    <h3 class="cs-section-title">Design Process</h3>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Research & Audit</div>
+        <div class="process-step-desc">Understanding what's broken before fixing it</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Competitor Analysis</div>
+        <div class="process-step-desc">Benchmarking what good dental experiences look like</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">User Personas & Journeys</div>
+        <div class="process-step-desc">Designing for real users, not assumptions</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Information Architecture</div>
+        <div class="process-step-desc">Simplifying navigation and content structure</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">05</div>
+        <div class="process-step-title">Wireframing</div>
+        <div class="process-step-desc">Translating ideas into clear, usable layouts</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">06</div>
+        <div class="process-step-title">Iteration</div>
+        <div class="process-step-desc">Refining based on clarity, usability, and flow</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">07</div>
+        <div class="process-step-title">Prototyping</div>
+        <div class="process-step-desc">Making the experience interactive and testable</div>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">08</div>
+        <div class="process-step-title">Testing & Validation</div>
+        <div class="process-step-desc">Ensuring navigation, CTAs, and usability actually work</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENS -->
+  <div class="cs-screens">
+    <h3 class="cs-section-title">Design Screens</h3>
+    <div class="screens-grid-2">
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-2.png" alt="Appointment booking flow" loading="lazy"></div>
+        <p class="screen-caption">Appointment booking flow</p>
+      </div>
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-4.png" alt="Service cards design" loading="lazy"></div>
+        <p class="screen-caption">Service cards & navigation</p>
+      </div>
+    </div>
+    <div class="screens-grid-2">
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-6.png" alt="Desktop mockup" loading="lazy"></div>
+        <p class="screen-caption">Desktop experience</p>
+      </div>
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-8.png" alt="Mobile screens" loading="lazy"></div>
+        <p class="screen-caption">Mobile responsiveness</p>
+      </div>
+    </div>
+    <div class="screens-grid-1">
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-10.png" alt="Full desktop view" loading="lazy"></div>
+        <p class="screen-caption">Full desktop layout</p>
+      </div>
+    </div>
+    <div class="screens-grid-1" style="margin-top:24px;">
+      <div>
+        <div class="screen-img"><img src="assets/dentistry-12.png" alt="Mobile final screens" loading="lazy"></div>
+        <p class="screen-caption">Final mobile screens</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY DECISIONS -->
+  <div class="cs-decisions">
+    <div>
+      <h3 class="cs-section-title">Key Design Decisions</h3>
+      <div class="decisions-list">
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Introduced a calm and consistent colour palette to reduce visual noise</div></div>
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Designed a strong hero section to immediately communicate brand and trust</div></div>
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Used real patient imagery and testimonials to build credibility</div></div>
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Implemented large, clickable service cards for easy navigation</div></div>
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Added sticky CTAs to support quick booking</div></div>
+        <div class="decision-item"><div class="decision-dot"></div><div class="decision-text">Focused on mobile-first responsiveness throughout</div></div>
+      </div>
+    </div>
+    <div class="cs-impact">
+      <h3 class="cs-section-title">Impact & Learnings</h3>
+      <div class="impact-grid">
+        <div class="impact-item"><p class="impact-text">Patients can now find and book appointments faster through clear, visible CTAs</p></div>
+        <div class="impact-item"><p class="impact-text">Reduced basic inquiry calls by making services and contact information easier to access</p></div>
+        <div class="impact-item"><p class="impact-text">Built stronger trust with new patients through real testimonials and doctor presence</p></div>
+        <div class="impact-item"><p class="impact-text">Created a smoother mobile booking journey for busy patients searching on the go</p></div>
+      </div>
+      <div class="cs-learning">
+        <p>"Healthcare websites need to feel clear, calm, and trustworthy before they feel creative. Small UX decisions — CTA placement, content hierarchy, patient-focused messaging — make a dental website feel more approachable."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CASE STUDY 02 — HOTEL OPS APP                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="case-study" id="hotel">
+  <div class="cs-header">
+    <div>
+      <div class="cs-tag">Case Study 02</div>
+      <div class="cs-number">02</div>
+      <h2 class="cs-title">Hotel Operations<br><em>App</em></h2>
+      <p class="cs-subtitle">A comprehensive hotel management mobile application designed to streamline operations, staff coordination, and guest experience management.</p>
+    </div>
+    <div class="cs-meta">
+      <div class="cs-meta-row"><span class="cs-meta-label">Client</span><span class="cs-meta-value">Confidential · USA</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">UI/UX Design · Mobile App</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+    </div>
+  </div>
+  <div class="cs-placeholder">
+    <h3>Case Study Coming Soon</h3>
+    <p>Full case study content and screens will be added shortly.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CASE STUDY 03 — BEAUTY REJUVENATION                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="case-study" id="beauty">
+  <div class="cs-header">
+    <div>
+      <div class="cs-tag">Case Study 03</div>
+      <div class="cs-number">03</div>
+      <h2 class="cs-title">Beauty Rejuvenation<br><em>Centre</em></h2>
+      <p class="cs-subtitle">Luxury aesthetic clinic website redesign crafted to reflect premium positioning, encourage service bookings, and elevate the brand's digital presence.</p>
+    </div>
+    <div class="cs-meta">
+      <div class="cs-meta-row"><span class="cs-meta-label">Client</span><span class="cs-meta-value">Confidential · USA</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">UI/UX Design · Web Redesign</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+    </div>
+  </div>
+  <div class="cs-placeholder">
+    <h3>Case Study Coming Soon</h3>
+    <p>Full case study content and screens will be added shortly.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CASE STUDY 04 — MENTAL HEALTH                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="case-study" id="mentalhealth">
+  <div class="cs-header">
+    <div>
+      <div class="cs-tag">Case Study 04</div>
+      <div class="cs-number">04</div>
+      <h2 class="cs-title">Mental Health<br><em>Clinic</em></h2>
+      <p class="cs-subtitle">Empathetic, calming website redesign for a mental health practice. Focused on accessibility, reducing stigma, and creating a safe, welcoming digital environment.</p>
+    </div>
+    <div class="cs-meta">
+      <div class="cs-meta-row"><span class="cs-meta-label">Client</span><span class="cs-meta-value">Confidential · USA</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">UI/UX Design · Web Redesign</span></div>
+      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+    </div>
+  </div>
+  <div class="cs-placeholder">
+    <h3>Case Study Coming Soon</h3>
+    <p>Full case study content and screens will be added shortly.</p>
+  </div>
+</div>
+
+<div class="footer-bar">© 2026 Muskan Shah · Designed with intention in Ahmedabad, Gujarat.</div>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(navToggle) navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile(){ if(mobileMenu) mobileMenu.classList.remove('open'); }
+</script>
+</body>
+</html>
