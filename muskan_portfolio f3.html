@@ -218,7 +218,7 @@
 <nav>
   <a href="#" class="nav-name">Muskan Shah</a>
   <div class="nav-links" id="navLinks">
-    <a href="#uiux">UI/UX</a>
+    <a href="uiux.html">UI/UX</a>
     <a href="marketing.html">Marketing</a>
     <a href="#ecommerce">E-Commerce Design</a>
     <a href="#canva">Canva Design</a>
@@ -228,7 +228,7 @@
   <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#uiux" onclick="closeMobile()">UI/UX</a>
+  <a href="uiux.html" onclick="closeMobile()">UI/UX</a>
   <a href="marketing.html" onclick="closeMobile()">Marketing</a>
   <a href="#ecommerce" onclick="closeMobile()">E-Commerce Design</a>
   <a href="#canva" onclick="closeMobile()">Canva Design</a>
@@ -238,26 +238,29 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-inner fade-up" style="position:relative;">
+  <div class="hero-inner fade-up">
 
-    <!-- Badge top-left far from text -->
-    <span style="position:absolute; top:0; left:-120px; transform:rotate(-6deg); background:var(--gold-pale); border:1px solid rgba(201,168,76,0.4); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--brown); white-space:nowrap; display:inline-block;">UI/UX Design</span>
+    <div style="position:relative; display:inline-block; width:100%;">
 
-    <!-- Badge bottom-right far from text -->
-    <span style="position:absolute; bottom:80px; right:-120px; transform:rotate(4deg); background:var(--gold); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--cream); white-space:nowrap; display:inline-block;">Creative</span>
+      <!-- Floating badges -->
+      <span style="position:absolute; top:0; left:5%; background:var(--gold-pale); border:1px solid rgba(201,168,76,0.4); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--brown); transform:rotate(-6deg); display:inline-block; white-space:nowrap;">UI/UX Design</span>
+      <span style="position:absolute; bottom:0; right:5%; background:var(--gold); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--cream); transform:rotate(4deg); display:inline-block; white-space:nowrap;">Creative</span>
 
-    <!-- Hello + photo + name row -->
-    <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:12px;">
-      <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">Hello!</h1>
-      <div style="width:68px; height:68px; border-radius:50%; overflow:hidden; border:3px solid var(--gold); flex-shrink:0;">
-        <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" style="width:140%; height:140%; object-fit:cover; object-position:center 10%; margin-left:-20%; margin-top:-10%;" alt="Muskan Shah">
+      <!-- Hello + photo + name row -->
+      <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:12px;">
+        <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">Hello!</h1>
+        <div style="width:68px; height:68px; border-radius:50%; overflow:hidden; border:3px solid var(--gold); flex-shrink:0;">
+          <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" style="width:140%; height:140%; object-fit:cover; object-position:center 10%; margin-left:-20%; margin-top:-10%;" alt="Muskan Shah">
+        </div>
+        <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">I'm Muskan,</h1>
       </div>
-      <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">I'm Muskan,</h1>
-    </div>
 
-    <h1 style="font-family:var(--serif); font-size:clamp(34px,5vw,68px); font-weight:900; line-height:1.05; letter-spacing:-2px; margin:0 0 28px; color:var(--text-dark); text-align:center;">
-      a <em style="color:var(--brown); font-style:italic;">UI/UX Designer</em><br>&amp; <em style="color:var(--brown); font-style:italic;">Marketing Strategist</em>
-    </h1>
+      <!-- Title -->
+      <h1 style="font-family:var(--serif); font-size:clamp(34px,5vw,68px); font-weight:900; line-height:1.05; letter-spacing:-2px; margin:0 0 28px; color:var(--text-dark); text-align:center;">
+        a <em style="color:var(--brown); font-style:italic;">UI/UX Designer</em><br>&amp; <em style="color:var(--brown); font-style:italic;">Marketing Strategist</em>
+      </h1>
+
+    </div>
 
     <p class="hero-tagline">I turn ideas into experiences and visuals into stories — through product design, brand strategy, and content that connects.</p>
     <div class="hero-btns">
@@ -279,7 +282,8 @@
       </div>
     </div>
     <div class="cards-grid">
-      <div class="project-card">
+      <a href="uiux.html#hotel" style="text-decoration:none;color:inherit;">
+        <div class="project-card">
         <div class="card-img">
           <img src="https://lh3.googleusercontent.com/d/1QPpsfKmxeT1wgBUolIEkVAPo5iauzdje" alt="Hotel Operations Task Management App">
           <span class="card-type-badge">Mobile App</span>
@@ -291,7 +295,8 @@
           <div class="card-footer"><span class="card-client">USA Client · Mobile</span><span class="card-arrow">→</span></div>
         </div>
       </div>
-      <div class="project-card">
+      <a href="uiux.html#dentistry" style="text-decoration:none;color:inherit;">
+        <div class="project-card">
         <div class="card-img">
           <img src="https://lh3.googleusercontent.com/d/1G2dsWEoAO5hWIFCigwOBE2nRHmwHAB0y" alt="Dentistry Clinic Website">
           <span class="card-type-badge">Website Revamp</span>
@@ -303,7 +308,8 @@
           <div class="card-footer"><span class="card-client">USA Client · Web</span><span class="card-arrow">→</span></div>
         </div>
       </div>
-      <div class="project-card">
+      <a href="uiux.html#beauty" style="text-decoration:none;color:inherit;">
+        <div class="project-card">
         <div class="card-img">
           <img src="https://lh3.googleusercontent.com/d/1s0tZ6bqRrCwspddKH26ngy-zxGDi0og9" alt="Beauty Rejuvenation Centre Website">
           <span class="card-type-badge">Website Revamp</span>
@@ -315,7 +321,8 @@
           <div class="card-footer"><span class="card-client">USA Client · Web</span><span class="card-arrow">→</span></div>
         </div>
       </div>
-      <div class="project-card">
+      <a href="uiux.html#mentalhealth" style="text-decoration:none;color:inherit;">
+        <div class="project-card">
         <div class="card-img">
           <img src="https://lh3.googleusercontent.com/d/1OkfKgC1uUZ2Ml-yWg4dPEc-MCusDK003" alt="Mental Health Clinic Website">
           <span class="card-type-badge">Website Revamp</span>
