@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UI/UX Design — Muskan Shah</title>
+<title>UI/UX Design Muskan Shah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -43,19 +43,19 @@
   .case-study { padding:100px 5vw; border-bottom:1px solid var(--border); }
   .case-study:nth-child(even) { background:var(--cream2); }
 
-  /* CS HEADER — title left, meta right */
-  .cs-header { display:grid; grid-template-columns:1.2fr 1fr; gap:60px; align-items:start; margin-bottom:60px; }
+  /* CS HEADER title left, meta right */
+  .cs-header { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; margin-bottom:60px; }
   .cs-title { font-family:var(--serif); font-size:clamp(38px,5vw,58px); font-weight:900; line-height:1.05; letter-spacing:-1.5px; color:var(--text-dark); margin-bottom:16px; }
   .cs-title em { font-style:italic; color:var(--brown); }
   .cs-subtitle { font-size:15px; color:var(--text-soft); line-height:1.7; margin-bottom:28px; max-width:460px; }
   .cs-quote { background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:0 14px 14px 0; padding:24px 28px; }
   .cs-quote p { font-family:var(--serif); font-size:17px; font-style:italic; color:var(--brown); line-height:1.65; }
-  .cs-meta { display:flex; flex-direction:column; gap:20px; padding:30px; background:white; border-radius:20px; border:1px solid var(--border); }
+  .cs-meta { display:flex; flex-direction:column; gap:18px; padding:28px; background:white; border-radius:20px; border:1px solid var(--border); position:sticky; top:80px; }
   .cs-meta-row { display:flex; flex-direction:column; gap:4px; }
   .cs-meta-label { font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--gold); }
   .cs-meta-value { font-size:14px; font-weight:500; color:var(--text-dark); line-height:1.5; }
 
-  /* HERO IMAGE — full width */
+  /* HERO IMAGE full width */
   .cs-hero-img { border-radius:20px; overflow:hidden; border:1px solid var(--border); margin-bottom:70px; }
   .cs-hero-img img { width:100%; display:block; }
 
@@ -63,13 +63,13 @@
   .cs-section-title { font-family:var(--serif); font-size:28px; font-weight:700; color:var(--text-dark); margin-bottom:32px; letter-spacing:-0.5px; }
   .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:70px; }
   .process-step { background:white; border:1px solid var(--border); border-radius:16px; padding:22px 20px; }
-  .process-icon { font-size:22px; margin-bottom:10px; }
+  .process-icon { margin-bottom:12px; display:flex; align-items:center; }
   .process-step-title { font-size:14px; font-weight:600; color:var(--text-dark); margin-bottom:6px; }
   .process-step-desc { font-size:12.5px; color:var(--text-soft); line-height:1.6; }
 
-  /* TWO SCREENS — no title */
-  .two-screens { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:70px; }
-  .screen-img { border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--cream3); }
+  /* TWO SCREENS no title */
+  .two-screens { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:70px; border:none; }
+  .screen-img { border-radius:16px; overflow:hidden; background:transparent; }
   .screen-img img { width:100%; display:block; }
 
   /* WHAT WE ACCOMPLISHED */
@@ -81,20 +81,20 @@
   .decision-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:7px; }
   .decision-text { font-size:14px; color:var(--text-mid); line-height:1.6; }
 
-  /* DEVICE MOCKUP — full width */
+  /* DEVICE MOCKUP full width */
   .cs-mockup { border-radius:20px; overflow:hidden; margin-bottom:70px; }
   .cs-mockup img { width:100%; display:block; }
 
   /* IMPACT */
-  .cs-impact { background:var(--text-dark); border-radius:24px; padding:50px; margin-bottom:0; }
-  .cs-impact .cs-section-title { color:var(--cream); }
+  .cs-impact { background:var(--cream2); border-radius:24px; padding:50px; margin-bottom:0; border:1px solid var(--border); }
+  .cs-impact .cs-section-title { color:var(--text-dark); }
   .impact-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px; }
-  .impact-item { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:20px 22px; }
-  .impact-text { font-size:14px; color:rgba(250,247,242,0.75); line-height:1.65; }
-  .cs-learning { background:rgba(30,40,197,0.12); border:1px solid rgba(30,40,197,0.25); border-radius:14px; padding:24px 28px; }
-  .cs-learning p { font-family:var(--serif); font-size:16px; font-style:italic; color:var(--gold-light); line-height:1.7; }
+  .impact-item { background:white; border:1px solid var(--border); border-radius:14px; padding:20px 22px; }
+  .impact-text { font-size:14px; color:var(--text-mid); line-height:1.65; }
+  .cs-learning { background:var(--gold-pale); border:1px solid rgba(30,40,197,0.2); border-radius:14px; padding:24px 28px; }
+  .cs-learning p { font-family:var(--serif); font-size:16px; font-style:italic; color:var(--brown); line-height:1.7; }
 
-  /* HAND MOCKUP — full width, after impact */
+  /* HAND MOCKUP full width, after impact */
   .cs-hand-mockup { border-radius:20px; overflow:hidden; margin-top:40px; }
   .cs-hand-mockup img { width:100%; display:block; }
 
@@ -140,7 +140,7 @@
 
 <div class="page-hero">
   <h1>UI / UX <em>Design</em></h1>
-  <p>End-to-end product design — from research and wireframes through high-fidelity prototypes. All client names protected under NDA.</p>
+  <p>End-to-end product design from research and wireframes through high-fidelity prototypes. All client names protected under NDA.</p>
   <div class="project-nav">
     <a href="#dentistry" class="project-pill"><span class="pill-num">01</span> Dentistry Clinic</a>
     <a href="#hotel" class="project-pill"><span class="pill-num">02</span> Hotel Operations App</a>
@@ -150,7 +150,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- CASE STUDY 01 — DENTISTRY                 -->
+<!-- CASE STUDY 01 DENTISTRY                 -->
 <!-- ══════════════════════════════════════════ -->
 <div class="case-study" id="dentistry">
 
@@ -192,48 +192,48 @@
   <h3 class="cs-section-title">Design Process</h3>
   <div class="process-grid">
     <div class="process-step">
-      <div class="process-icon">🔍</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
       <div class="process-step-title">Research & Audit</div>
       <div class="process-step-desc">Understanding what's broken before fixing it</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">📊</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
       <div class="process-step-title">Competitor Analysis</div>
       <div class="process-step-desc">Benchmarking what good dental experiences look like</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">👤</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
       <div class="process-step-title">User Personas & Journeys</div>
       <div class="process-step-desc">Designing for real users, not assumptions</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">🗂️</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
       <div class="process-step-title">Information Architecture</div>
       <div class="process-step-desc">Simplifying navigation and content structure</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">✏️</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
       <div class="process-step-title">Wireframing</div>
       <div class="process-step-desc">Translating ideas into clear, usable layouts</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">🔄</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg></div>
       <div class="process-step-title">Iteration</div>
       <div class="process-step-desc">Refining based on clarity, usability, and flow</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">📱</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <div class="process-step-title">Prototyping</div>
       <div class="process-step-desc">Making the experience interactive and testable</div>
     </div>
     <div class="process-step">
-      <div class="process-icon">✅</div>
+      <div class="process-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E28C5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       <div class="process-step-title">Testing & Validation</div>
       <div class="process-step-desc">Ensuring navigation, CTAs, and usability actually work</div>
     </div>
   </div>
 
-  <!-- TWO SCREENS — no title -->
+  <!-- TWO SCREENS no title -->
   <div class="two-screens">
     <div class="screen-img"><img src="assets/dentistry-2.png" alt="Appointment booking screen" loading="lazy"></div>
     <div class="screen-img"><img src="assets/dentistry-4.png" alt="Patient habits screen" loading="lazy"></div>
@@ -274,7 +274,7 @@
       <div class="impact-item"><p class="impact-text">Created a smoother mobile booking journey for busy patients searching on the go</p></div>
     </div>
     <div class="cs-learning">
-      <p>"Healthcare websites need to feel clear, calm, and trustworthy before they feel creative. Small UX decisions — CTA placement, content hierarchy, and patient-focused messaging — can make a dental website feel more approachable and easier to act on."</p>
+      <p>"Healthcare websites need to feel clear, calm, and trustworthy before they feel creative. Small UX decisions CTA placement, content hierarchy, and patient-focused messaging can make a dental website feel more approachable and easier to act on."</p>
     </div>
   </div>
 
@@ -286,7 +286,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- CASE STUDY 02 — HOTEL OPS                 -->
+<!-- CASE STUDY 02 HOTEL OPS                 -->
 <!-- ══════════════════════════════════════════ -->
 <div class="case-study" id="hotel">
   <div class="cs-header">
@@ -298,7 +298,7 @@
       <div class="cs-meta-row"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">Hotel Operations · Mobile App</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Deliverables</span><span class="cs-meta-value">Hi-Fi Wireframes · Prototype</span></div>
-      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+      
     </div>
   </div>
   <div class="cs-placeholder">
@@ -308,7 +308,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- CASE STUDY 03 — BEAUTY REJUVENATION       -->
+<!-- CASE STUDY 03 BEAUTY REJUVENATION       -->
 <!-- ══════════════════════════════════════════ -->
 <div class="case-study" id="beauty">
   <div class="cs-header">
@@ -320,7 +320,7 @@
       <div class="cs-meta-row"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">Beauty Clinic · Web Redesign</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Deliverables</span><span class="cs-meta-value">Hi-Fi Wireframes · Logo · Stationery</span></div>
-      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+      
     </div>
   </div>
   <div class="cs-placeholder">
@@ -330,7 +330,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- CASE STUDY 04 — MENTAL HEALTH             -->
+<!-- CASE STUDY 04 MENTAL HEALTH             -->
 <!-- ══════════════════════════════════════════ -->
 <div class="case-study" id="mentalhealth">
   <div class="cs-header">
@@ -342,7 +342,7 @@
       <div class="cs-meta-row"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Category</span><span class="cs-meta-value">Mental Health · Web Redesign</span></div>
       <div class="cs-meta-row"><span class="cs-meta-label">Deliverables</span><span class="cs-meta-value">Hi-Fi Wireframes · Prototype</span></div>
-      <div class="cs-meta-row"><span class="cs-meta-label">Region</span><span class="cs-meta-value">USA · NDA Protected</span></div>
+      
     </div>
   </div>
   <div class="cs-placeholder">
