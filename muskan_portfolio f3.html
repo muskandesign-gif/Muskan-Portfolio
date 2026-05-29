@@ -355,10 +355,10 @@
   </div>
 
   <style>
-    .platform-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 20px; align-items: start; }
-    .platform-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; height: 100%; }
-    .platform-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(122,92,46,0.12); }
-    .platform-card-cover { height: 200px; display: flex; align-items: center; justify-content: center; }
+    .platform-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 20px; align-items: stretch; }
+    .platform-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+    .platform-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(30,40,197,0.10); }
+    .platform-card-cover { height: 200px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .platform-card-cover.instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
     .platform-card-cover.linkedin { background: #0A66C2; }
     .platform-card-cover.pinterest { background: #E60023; }
