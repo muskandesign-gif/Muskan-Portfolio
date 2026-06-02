@@ -3,637 +3,995 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muskan Shah Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Muskan Shah — UI/UX Designer & Marketing Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --cream: #ffffff; --cream2: #f0f1fb; --cream3: #d8daf5;
-    --gold: #1E28C5; --gold-light: #c8cbf0; --gold-pale: #eceeff;
-    --brown: #1E28C5; --text-dark: #0a0a0a; --text-mid: #2a2a2a;
-    --text-soft: #6b6b6b; --border: rgba(30,40,197,0.15);
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-  }
-  body { background: var(--cream); color: var(--text-dark); font-family: var(--sans); scroll-behavior: smooth; }
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 64px;
-  }
-  .nav-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--text-dark); text-decoration: none; }
-  .nav-links { display: flex; gap: 6px; align-items: center; }
-  .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 5px 10px; border-radius: 20px; transition: all 0.2s; }
-  .nav-links a:hover { background: var(--gold-light); color: var(--brown); }
-  .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-dark); }
-  .mobile-menu { display: none; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--border); padding: 16px 5vw; gap: 4px; }
-  .mobile-menu a { font-size: 14px; color: var(--text-mid); text-decoration: none; padding: 8px 0; font-weight: 500; border-bottom: 1px solid var(--border); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* HERO centered, balanced */
-  .hero {
-    min-height: 92vh; display: flex; align-items: center; justify-content: center;
-    padding: 80px 5vw; position: relative; overflow: hidden; text-align: center;
-  }
-  .hero::before {
-    content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    width: 640px; height: 640px; border-radius: 50%;
-    background: var(--gold-pale); z-index: 0; opacity: 0.6;
-  }
-  .hero-inner { position: relative; z-index: 1; max-width: 860px; width: 100%; }
-  .hero h1 {
-    font-family: var(--serif); font-size: clamp(52px, 8vw, 96px);
-    line-height: 1.05; font-weight: 900; color: var(--text-dark);
-    margin-bottom: 28px; letter-spacing: -2px;
-  }
-  .hero h1 em { font-style: italic; color: var(--brown); }
-  .hero-tagline {
-    font-size: clamp(16px, 2vw, 19px); color: var(--text-mid); font-weight: 300;
-    max-width: 520px; line-height: 1.65; margin: 0 auto 36px;
-  }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px; justify-content: center; }
-  .skill-tag {
-    font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 20px;
-    border: 1px solid var(--cream3); background: white; color: var(--text-mid); transition: all 0.2s;
-  }
-  .skill-tag:hover { border-color: var(--gold); color: var(--brown); background: var(--gold-pale); }
-  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-  .btn-primary {
-    font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 13px 28px; border-radius: 40px;
-    cursor: pointer; text-decoration: none; background: var(--text-dark); color: var(--cream);
-    border: 2px solid var(--text-dark); transition: all 0.25s;
-  }
-  .btn-primary:hover { background: var(--brown); border-color: var(--brown); transform: translateY(-1px); }
-  .btn-outline {
-    font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 13px 28px; border-radius: 40px;
-    cursor: pointer; text-decoration: none; background: transparent; color: var(--text-dark);
-    border: 2px solid var(--cream3); transition: all 0.25s;
-  }
-  .btn-outline:hover { border-color: var(--gold); color: var(--brown); transform: translateY(-1px); }
+:root {
+  --white: #ffffff;
+  --blue: #1E28C5;
+  --black: #000000;
+  --light-blue: #F0F1FB;
+  --yellow: #FFCC00;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Satoshi', sans-serif;
+}
 
-  /* SECTIONS */
-  section { padding: 100px 5vw; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-  .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold); }
-  .section-title { font-family: var(--serif); font-size: clamp(34px, 4.5vw, 54px); font-weight: 700; color: var(--text-dark); line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
-  .section-sub { font-size: 16px; color: var(--text-soft); max-width: 480px; line-height: 1.65; margin-bottom: 60px; }
-  .section-head-row { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 60px; }
-  .section-divider { height: 1px; background: var(--border); margin: 0 5vw; }
+html { scroll-behavior: smooth; }
 
-  /* PROJECT CARDS */
-  .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-  .project-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-  .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(122,92,46,0.12); }
-  .card-img { height: 360px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-  .card-type-badge { position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; background: rgba(255,255,255,0.92); color: var(--brown); backdrop-filter: blur(4px); }
-  .card-body { padding: 22px 24px; }
-  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-  .card-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 10px; background: var(--gold-pale); color: var(--brown); }
-  .card-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; line-height: 1.25; }
-  .card-desc { font-size: 13.5px; color: var(--text-soft); line-height: 1.6; }
-  .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-  .card-client { font-size: 12px; color: var(--text-soft); }
-  .card-arrow { width: 32px; height: 32px; border-radius: 50%; background: var(--text-dark); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; transition: background 0.2s; }
-  .project-card:hover .card-arrow { background: var(--brown); }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
 
-  /* MARKETING */
-  .marketing-bg { background: var(--cream2); }
-  .marketing-marquee-wrap { overflow: hidden; margin: 40px -5vw 50px; }
-  .marketing-marquee { display: flex; gap: 16px; animation: marquee 28s linear infinite; width: max-content; }
-  .marketing-marquee:hover { animation-play-state: paused; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .m-pill { white-space: nowrap; padding: 10px 20px; border-radius: 40px; font-size: 13px; font-weight: 500; border: 1px solid var(--cream3); background: white; color: var(--text-mid); }
-  .m-pill.gold { background: var(--gold-pale); border-color: rgba(30,40,197,0.3); color: var(--brown); }
-  .marketing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .mktg-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-  .mktg-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(122,92,46,0.12); }
-  .mktg-cover { height: 220px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: var(--cream2); }
-  .mktg-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-  .mktg-cover-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
-  .mktg-cover-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: white; border: 1px solid var(--border); }
-  .mktg-cover-icon svg { width: 24px; height: 24px; stroke: var(--brown); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .mktg-cover-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-soft); }
-  .mktg-type-badge { position: absolute; top: 12px; right: 12px; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; background: rgba(255,255,255,0.92); color: var(--brown); backdrop-filter: blur(4px); }
-  .mktg-body { padding: 20px 22px; }
-  .mktg-industry { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-  .mktg-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; line-height: 1.25; }
-  .mktg-work { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
-  @media (max-width: 900px) { .marketing-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .marketing-grid { grid-template-columns: 1fr; } }
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 56px;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--black);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-cta {
+  background: var(--blue);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
 
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+}
 
-  /* ECOMMERCE */
-  .ecom-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: white; }
-  .ecom-row { display: grid; grid-template-columns: 88px 1fr auto; align-items: center; gap: 20px; padding: 16px 24px; border-bottom: 1px solid var(--border); transition: background 0.2s; cursor: default; }
-  .ecom-row:last-child { border-bottom: none; }
-  .ecom-row:hover { background: var(--cream); }
-  .ecom-thumb { width: 88px; height: 68px; border-radius: 10px; overflow: hidden; flex-shrink: 0; background: var(--cream3); }
-  .ecom-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-  .ecom-row-center { display: flex; flex-direction: column; gap: 4px; }
-  .ecom-row-cat { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
-  .ecom-row-brand { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--text-dark); line-height: 1.2; }
-  .ecom-row-desc { font-size: 12.5px; color: var(--text-soft); line-height: 1.5; margin-top: 2px; }
-  .ecom-row-right { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
-  .ecom-tag { font-size: 10.5px; font-weight: 500; padding: 5px 12px; border-radius: 20px; background: var(--gold-pale); color: var(--brown); white-space: nowrap; }
-  @media (max-width: 600px) { .ecom-row { grid-template-columns: 72px 1fr; } .ecom-row-right { display: none; } }
+.hero-badge {
+  position: absolute;
+  background: var(--yellow);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-badge-1 {
+  top: 140px;
+  left: 10%;
+  transform: rotate(-8deg);
+}
+.hero-badge-2 {
+  bottom: 200px;
+  right: 10%;
+  transform: rotate(6deg);
+}
+.hero-element {
+  position: absolute;
+  pointer-events: none;
+}
+.hero-element img { width: 100%; height: 100%; object-fit: contain; }
 
-  /* CANVA */
-  .canva-bg { background: var(--cream2); }
-  .canva-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; background: white; }
-  .canva-row { display: grid; grid-template-columns: 88px 1fr auto; align-items: center; gap: 20px; padding: 16px 24px; border-bottom: 1px solid var(--border); transition: background 0.2s; cursor: default; }
-  .canva-row:last-child { border-bottom: none; }
-  .canva-row:hover { background: var(--cream); }
-  .canva-thumb { width: 88px; height: 68px; border-radius: 10px; overflow: hidden; flex-shrink: 0; background: var(--cream3); }
-  .canva-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-  .canva-row-center { display: flex; flex-direction: column; gap: 4px; }
-  .canva-row-cat { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
-  .canva-row-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--text-dark); line-height: 1.2; }
-  .canva-row-desc { font-size: 12.5px; color: var(--text-soft); line-height: 1.5; margin-top: 2px; }
-  .canva-row-badge { font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; background: var(--gold-pale); color: var(--brown); white-space: nowrap; flex-shrink: 0; }
-  .canva-row-arrow { width: 32px; height: 32px; border-radius: 50%; background: var(--cream2); display: flex; align-items: center; justify-content: center; color: var(--brown); font-size: 14px; flex-shrink: 0; transition: background 0.2s; margin-left: 10px; }
-  .canva-row:hover .canva-row-arrow { background: var(--text-dark); color: white; }
-  @media (max-width: 600px) { .canva-row { grid-template-columns: 72px 1fr; } .canva-row-badge { display: none; } }
+.elem-sparkle { top: 120px; right: 18%; width: 48px; height: 48px; }
+.elem-dashes  { bottom: 220px; left: 12%; width: 56px; height: 32px; }
+.elem-three   { top: 200px; left: 20%; width: 40px; height: 24px; }
+.elem-four    { bottom: 160px; right: 18%; width: 32px; height: 32px; }
 
-  /* ABOUT */
-  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-  .about-photo-wrap { position: sticky; top: 100px; }
-  .about-photo-frame { border-radius: 24px; overflow: hidden; border: 1px solid var(--border); background: var(--cream2); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; position: relative; }
-  .about-photo-badge { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: white; padding: 10px 20px; border-radius: 40px; border: 1px solid var(--border); white-space: nowrap; font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; }
-  .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-  .about-bio { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 36px; }
-  .about-bio strong { color: var(--text-dark); font-weight: 500; }
-  .skills-section { margin-bottom: 40px; }
-  .skills-section-title { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; }
-  .skills-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .s-pill { font-size: 12.5px; font-weight: 500; padding: 7px 16px; border-radius: 20px; border: 1px solid var(--cream3); background: white; color: var(--text-mid); transition: all 0.2s; }
-  .s-pill:hover { background: var(--gold-pale); border-color: var(--gold); color: var(--brown); }
-  .outside-work-card { background: var(--gold-pale); border-radius: 20px; padding: 28px 30px; border: 1px solid rgba(30,40,197,0.25); margin-bottom: 28px; }
-  .owc-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
-  .owc-text { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
-  .behance-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; padding: 12px 22px; border-radius: 30px; border: 1.5px solid var(--cream3); transition: all 0.25s; }
-  .behance-link:hover { border-color: var(--gold); color: var(--brown); background: var(--gold-pale); }
+.hero-profile {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 8px;
+  border: 2px solid var(--yellow);
+}
 
-  /* CONTACT */
-  .contact-bg { background: var(--text-dark); }
-  .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-  .contact-title { font-family: var(--serif); font-size: clamp(42px, 6vw, 72px); font-weight: 900; color: var(--cream); line-height: 1.05; margin-bottom: 20px; letter-spacing: -2px; }
-  .contact-title em { color: var(--gold); font-style: italic; }
-  .contact-sub { font-size: 16px; color: rgba(250,247,242,0.6); margin-bottom: 48px; line-height: 1.65; }
-  .contact-email-link { display: inline-block; font-family: var(--serif); font-size: clamp(18px, 3vw, 26px); font-weight: 700; color: var(--cream); text-decoration: none; margin-bottom: 48px; padding-bottom: 4px; border-bottom: 1px solid rgba(201,168,76,0.5); transition: border-color 0.2s; }
-  .contact-email-link:hover { border-color: var(--gold); color: var(--gold); }
-  .social-links { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .soc-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; text-decoration: none; padding: 11px 22px; border-radius: 30px; border: 1px solid rgba(250,247,242,0.2); color: rgba(250,247,242,0.8); transition: all 0.25s; }
-  .soc-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(30,40,197,0.08); }
-  .footer-bar { background: var(--text-dark); text-align: center; padding: 24px 5vw; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12.5px; color: rgba(250,247,242,0.3); }
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--black);
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+.hero-title .line1 { display: block; }
+.hero-title .line2 { display: block; }
+.hero-title .line3 { display: block; font-style: italic; }
 
-  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto 40px;
+}
 
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .nav-toggle { display: block; }
-    .mobile-menu.open { display: flex; }
-    .hero { padding: 60px 5vw 80px; }
-    .hero::before { width: 300px; height: 300px; }
-    section { padding: 70px 5vw; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-photo-wrap { position: static; }
-    .canva-mosaic { grid-template-columns: repeat(2, 1fr); }
-    .cards-grid { grid-template-columns: 1fr; }
-    .card-img { height: 280px; }
-  }
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 42px; }
-    .card-img { height: 220px; }
-  }
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--black);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--blue); }
+.btn-outline {
+  background: transparent;
+  color: var(--black);
+  border: 1.5px solid var(--black);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--black); color: var(--white); }
+
+/* ── SECTION BANNER (blue strip) ── */
+.section-banner {
+  background: var(--blue);
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.section-banner-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+  font-style: italic;
+}
+.section-banner-title span { font-style: normal; }
+.section-banner-desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* ── UI/UX SECTION ── */
+#uiux {
+  padding: 64px 40px;
+  background: var(--white);
+}
+
+.uiux-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.uiux-card {
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  align-items: center;
+  padding: 32px;
+  gap: 32px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s, transform 0.25s;
+  background: var(--white);
+}
+.uiux-card:hover {
+  box-shadow: 0 8px 40px rgba(30,40,197,0.10);
+  transform: translateY(-2px);
+}
+.uiux-card-left { }
+.uiux-card-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.uiux-card-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.uiux-card-sub {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+.uiux-card-desc {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #555;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  max-width: 380px;
+}
+.btn-small {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.uiux-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--light-blue);
+}
+
+/* ── SOCIAL MEDIA MARKETING ── */
+#marketing {
+  padding: 64px 40px;
+  background: var(--white);
+}
+.mkt-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.mkt-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+.mkt-sub {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: #555;
+}
+
+/* Marquee */
+.marquee-wrap {
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap;
+}
+.marquee-track span {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #555;
+  padding: 0 24px;
+  border-right: 1px solid #ddd;
+  flex-shrink: 0;
+}
+.marquee-track span.pill {
+  background: var(--light-blue);
+  border-radius: 100px;
+  color: var(--blue);
+  font-weight: 600;
+  padding: 4px 16px;
+  border-right: none;
+  margin-right: 16px;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.platform-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.platform-card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.platform-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(30,40,197,0.10); }
+.platform-card-cover {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.platform-card-cover svg { width: 64px; height: 64px; }
+.platform-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.platform-card-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.platform-card-desc {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.btn-outline-blue {
+  display: inline-block;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+  padding: 9px 22px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all 0.2s;
+}
+.btn-outline-blue:hover { background: var(--blue); color: var(--white); }
+
+.mkt-platforms-strip {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #888;
+  margin-top: 8px;
+}
+.mkt-platforms-strip strong { color: var(--black); }
+
+/* ── E-COMMERCE DESIGN ── */
+#ecommerce {
+  padding: 0 40px 64px;
+  background: var(--white);
+}
+
+.ecom-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ecom-card {
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 24px;
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+.ecom-card:hover { box-shadow: 0 4px 24px rgba(30,40,197,0.08); }
+.ecom-card-img {
+  width: 120px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--light-blue);
+}
+.ecom-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.tag-pill {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--light-blue);
+  color: var(--blue);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.ecom-card-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+.ecom-card-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+.ecom-card-desc {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 480px;
+}
+.ecom-view-all {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* ── CANVA DESIGN ── */
+#canva {
+  padding: 0 40px 64px;
+  background: var(--white);
+}
+.canva-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.canva-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.canva-sub {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+.canva-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.canva-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E0E0E0;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.canva-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.canva-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--light-blue);
+  display: block;
+}
+.canva-card-body { padding: 20px; }
+.canva-card-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.canva-card-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}
+.canva-also {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+}
+.canva-also strong { color: var(--black); }
+.canva-also span { color: #555; margin: 0 6px; }
+
+/* ── ABOUT ── */
+#about {
+  padding: 80px 40px;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.about-quote-top {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 64px;
+  line-height: 1.2;
+}
+.about-quote-top em { font-style: italic; color: var(--blue); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-photo {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+  background: var(--light-blue);
+}
+.about-right {}
+.about-bio {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.about-skills-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.skill-pill {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--light-blue);
+  color: var(--blue);
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(30,40,197,0.15);
+}
+.about-extra-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+}
+.about-extra-text {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── FOOTER / CONTACT ── */
+#contact {
+  background: var(--black);
+  padding: 80px 40px;
+  text-align: center;
+}
+.footer-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+.footer-title em { font-style: italic; color: var(--yellow); }
+.footer-sub {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  max-width: 480px;
+  margin: 16px auto 40px;
+  line-height: 1.7;
+}
+.footer-email {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 4px;
+  transition: border-color 0.2s;
+}
+.footer-email:hover { border-color: var(--yellow); color: var(--yellow); }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+}
+.footer-link {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--white); }
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 48px;
+}
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-  <a href="#" class="nav-name">Muskan Shah</a>
-  <div class="nav-links" id="navLinks">
-    <a href="uiux.html">UI/UX</a>
-    <a href="marketing.html">Marketing</a>
-    <a href="#ecommerce">E-Commerce Design</a>
-    <a href="#canva">Canva Design</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
+  <a href="#" class="nav-logo">Muskan Shah</a>
+  <ul class="nav-links">
+    <li><a href="#uiux">UI/UX</a></li>
+    <li><a href="#marketing">Marketing</a></li>
+    <li><a href="#ecommerce">E-Commerce Design</a></li>
+    <li><a href="#canva">Canva Design</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="uiux.html" onclick="closeMobile()">UI/UX</a>
-  <a href="marketing.html" onclick="closeMobile()">Marketing</a>
-  <a href="#ecommerce" onclick="closeMobile()">E-Commerce Design</a>
-  <a href="#canva" onclick="closeMobile()">Canva Design</a>
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-</div>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-inner fade-up">
+<section id="hero">
+  <!-- Decorative elements -->
+  <div class="hero-element elem-sparkle"><img src="https://lh3.googleusercontent.com/d/1m3_N1pCOapVTENhKNZtv0LC5wUwKSIEg" alt=""></div>
+  <div class="hero-element elem-dashes"><img src="https://lh3.googleusercontent.com/d/1xrRRZpBhKubnL-3yPdOharD3jY5Slk1G" alt=""></div>
+  <div class="hero-element elem-three"><img src="https://lh3.googleusercontent.com/d/1-yU3wCssoO9C9UnxL9I3ViIWdPe2G7Uj" alt=""></div>
+  <div class="hero-element elem-four"><img src="https://lh3.googleusercontent.com/d/1XbKGbjb32eLIEYM50hfFD8BJZLyjI1zt" alt=""></div>
 
-    <div style="position:relative; display:inline-block; width:100%;">
+  <!-- Floating badges -->
+  <div class="hero-badge hero-badge-1">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4h4l-3 2.5 1 4L7 9l-3.5 2.5 1-4L1.5 5h4z" fill="#000"/></svg>
+    Certified
+  </div>
+  <div class="hero-badge hero-badge-2">Creative ✦</div>
 
-      <!-- Floating badges - positioned outside text area -->
-      <span style="position:absolute; top:-48px; left:2%; background:var(--gold-pale); border:1px solid rgba(30,40,197,0.35); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--brown); transform:rotate(-6deg); display:inline-block; white-space:nowrap;">UI/UX Design</span>
-      <span style="position:absolute; bottom:-48px; right:2%; background:var(--gold); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:500; color:var(--cream); transform:rotate(4deg); display:inline-block; white-space:nowrap;">Creative</span>
-
-      <!-- Hello + photo + name row -->
-      <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:12px;">
-        <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">Hello!</h1>
-        <div style="width:68px; height:68px; border-radius:50%; overflow:hidden; border:3px solid var(--gold); flex-shrink:0;">
-          <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" style="width:140%; height:140%; object-fit:cover; object-position:center 10%; margin-left:-20%; margin-top:-10%;" alt="Muskan Shah">
-        </div>
-        <h1 style="font-family:var(--serif); font-size:clamp(36px,5.5vw,72px); font-weight:900; color:var(--text-dark); line-height:1.05; letter-spacing:-2px; margin:0;">I'm Muskan,</h1>
-      </div>
-
-      <!-- Title -->
-      <h1 style="font-family:var(--serif); font-size:clamp(34px,5vw,68px); font-weight:900; line-height:1.05; letter-spacing:-2px; margin:0 0 28px; color:var(--text-dark); text-align:center;">
-        a <em style="color:var(--brown); font-style:italic;">UI/UX Designer</em><br>&amp; <em style="color:var(--brown); font-style:italic;">Marketing Strategist</em>
-      </h1>
-
-    </div>
-
-    <p class="hero-tagline">I turn ideas into experiences and visuals into stories — through product design, brand strategy, and content that connects.</p>
-    <div class="hero-btns">
-      <a href="#uiux" class="btn-primary">See My Work</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
-    </div>
+  <h1 class="hero-title">
+    <span class="line1">Hello! <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" alt="Muskan" class="hero-profile"> I'm Muskan,</span>
+    <span class="line2">a UI/UX Designer</span>
+    <span class="line3">&amp; Strategist</span>
+  </h1>
+  <p class="hero-sub">I turn ideas into experiences and visuals into stories,<br>through product design, brand strategy, and content that connects.</p>
+  <div class="hero-btns">
+    <a href="#uiux" class="btn-primary">See My Work</a>
+    <a href="#contact" class="btn-outline">Get in Touch</a>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<!-- UI/UX SECTION BANNER -->
+<div class="section-banner">
+  <div class="section-banner-title"><span>*</span>UI / UX Design</div>
+  <div class="section-banner-desc">With my keen eye for detail and sharp critical thinking skills, I specialise in crafting captivating websites, digital products, and experiences.</div>
+</div>
 
-<!-- UI/UX -->
-<section id="uiux">
-  <div class="fade-up">
-    <div class="section-head-row">
-      <div>
-        <h2 class="section-title">UI / UX Design</h2>
-        <p class="section-sub">End-to-end product design from research and wireframes through high-fidelity.</p>
-      </div>
-    </div>
-    <div class="cards-grid">
-      <a href="uiux.html#hotel" style="text-decoration:none;color:inherit;">
-        <div class="project-card">
-        <div class="card-img">
-          <img src="https://lh3.googleusercontent.com/d/1QPpsfKmxeT1wgBUolIEkVAPo5iauzdje" alt="Hotel Operations Task Management App">
-          <span class="card-type-badge">Mobile App</span>
-        </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">From Scratch</span><span class="card-tag">Research → Hi-Fi</span><span class="card-tag">Brand Identity</span></div>
-          <h3 class="card-title">Hotel Operations Task Management App</h3>
-          <p class="card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</p>
-          <div class="card-footer"><span class="card-client">USA Client · Mobile</span><span class="card-arrow">→</span></div>
-        </div>
-      </div>
-      <a href="uiux.html#dentistry" style="text-decoration:none;color:inherit;">
-        <div class="project-card">
-        <div class="card-img">
-          <img src="https://lh3.googleusercontent.com/d/1G2dsWEoAO5hWIFCigwOBE2nRHmwHAB0y" alt="Dentistry Clinic Website">
-          <span class="card-type-badge">Website Revamp</span>
-        </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">Web Revamp</span><span class="card-tag">Logo Design</span><span class="card-tag">Stationery</span></div>
-          <h3 class="card-title">Dentistry Clinic Website</h3>
-          <p class="card-desc">Website redesign alongside a complete logo and brand stationery process, bringing clinical trust and warmth into the digital experience.</p>
-          <div class="card-footer"><span class="card-client">USA Client · Web</span><span class="card-arrow">→</span></div>
-        </div>
-      </div>
-      <a href="uiux.html#beauty" style="text-decoration:none;color:inherit;">
-        <div class="project-card">
-        <div class="card-img">
-          <img src="https://lh3.googleusercontent.com/d/1s0tZ6bqRrCwspddKH26ngy-zxGDi0og9" alt="Beauty Rejuvenation Centre Website">
-          <span class="card-type-badge">Website Revamp</span>
-        </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">Web Revamp</span><span class="card-tag">Visual Design</span></div>
-          <h3 class="card-title">Beauty Rejuvenation Centre</h3>
-          <p class="card-desc">A luxurious digital experience for a beauty and wellness centre: refined visual language, elevated layouts, and seamless booking flows.</p>
-          <div class="card-footer"><span class="card-client">USA Client · Web</span><span class="card-arrow">→</span></div>
-        </div>
-      </div>
-      <a href="uiux.html#mentalhealth" style="text-decoration:none;color:inherit;">
-        <div class="project-card">
-        <div class="card-img">
-          <img src="https://lh3.googleusercontent.com/d/1OkfKgC1uUZ2Ml-yWg4dPEc-MCusDK003" alt="Mental Health Clinic Website">
-          <span class="card-type-badge">Website Revamp</span>
-        </div>
-        <div class="card-body">
-          <div class="card-tags"><span class="card-tag">Web Revamp</span><span class="card-tag">Empathy-Driven UX</span></div>
-          <h3 class="card-title">Mental Health Clinic Website</h3>
-          <p class="card-desc">Empathy-first UX for a mental wellness clinic: calm visual design, accessible information architecture, and trust-building user journeys.</p>
-          <div class="card-footer"><span class="card-client">USA Client · Web</span><span class="card-arrow">→</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- UI/UX CARDS -->
+<section id="uiux" style="padding:64px 40px; background:var(--white);">
+  <div class="uiux-cards">
 
-<div class="section-divider"></div>
-
-<!-- MARKETING -->
-<section id="marketing" class="marketing-bg">
-  <div class="fade-up">
-    <h2 class="section-title">Marketing</h2>
-    <p class="section-sub">Strategy, content, campaigns, and brand storytelling across platforms and industries.</p>
-  </div>
-
-  <div class="marketing-marquee-wrap fade-up">
-    <div class="marketing-marquee">
-      <span class="m-pill gold">Posts &amp; Reels</span><span class="m-pill">Carousel Content</span><span class="m-pill gold">Influencer Tie-Ups</span><span class="m-pill">Content Shoots</span><span class="m-pill gold">Ad Monitoring</span><span class="m-pill">Campaign Strategy</span><span class="m-pill gold">Hoardings &amp; OOH</span><span class="m-pill">Founder Personal Branding</span><span class="m-pill gold">Content Writing</span><span class="m-pill">Instagram · LinkedIn · Pinterest</span>
-      <span class="m-pill gold">Posts &amp; Reels</span><span class="m-pill">Carousel Content</span><span class="m-pill gold">Influencer Tie-Ups</span><span class="m-pill">Content Shoots</span><span class="m-pill gold">Ad Monitoring</span><span class="m-pill">Campaign Strategy</span><span class="m-pill gold">Hoardings &amp; OOH</span><span class="m-pill">Founder Personal Branding</span>
-    </div>
-  </div>
-
-  <style>
-    .platform-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-bottom: 20px; align-items: stretch; }
-    .platform-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-    .platform-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(30,40,197,0.10); }
-    .platform-card-cover { height: 200px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .platform-card-cover.instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .platform-card-cover.linkedin { background: #0A66C2; }
-    .platform-card-cover.pinterest { background: #E60023; }
-    .platform-logo-svg { width: 72px; height: 72px; fill: white; }
-    .platform-card-body { padding: 22px 24px; }
-    .platform-name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
-    .platform-desc { font-size: 13.5px; color: var(--text-soft); line-height: 1.6; margin-bottom: 14px; }
-    .platform-cta { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: var(--brown); }
-    @media (max-width: 768px) { .platform-cards { grid-template-columns: 1fr; } }
-  </style>
-
-  <div class="platform-cards fade-up">
-
-    <a href="marketing.html" class="platform-card">
-      <div class="platform-card-cover instagram">
-        <svg class="platform-logo-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <a href="uiux.html#hotel" class="uiux-card">
+      <div class="uiux-card-left">
+        <div class="uiux-card-tag">Application Design</div>
+        <div class="uiux-card-title">Hotel Operations<br>Task Management</div>
+        <div class="uiux-card-sub">Application Design</div>
+        <div class="uiux-card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototypes.</div>
+        <a href="uiux.html#hotel" class="btn-small">VIEW PROJECT</a>
       </div>
-      <div class="platform-card-body">
-        <div class="platform-name">Instagram</div>
-        <div class="platform-desc">Reels, carousels, stories, and feed strategy for brands across Real Estate, Beauty, Fashion, F&amp;B, and more.</div>
-        <span class="platform-cta">View client work →</span>
-      </div>
+      <img src="https://lh3.googleusercontent.com/d/1EI2RO63nlNfB7j-wtHuPPu4lT_ESgrpK" alt="Hotel Operations" class="uiux-card-img">
     </a>
 
-    <a href="marketing.html" class="platform-card">
-      <div class="platform-card-cover linkedin">
-        <svg class="platform-logo-svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    <a href="uiux.html#mentalhealth" class="uiux-card">
+      <div class="uiux-card-left">
+        <div class="uiux-card-tag">Website Redesign</div>
+        <div class="uiux-card-title">Mental Health Clinic</div>
+        <div class="uiux-card-sub">Website Redesign</div>
+        <div class="uiux-card-desc">Empathy-first UI for a mental wellness clinic: calm color psychology, accessible typography, and calming interaction patterns.</div>
+        <a href="uiux.html#mentalhealth" class="btn-small">VIEW PROJECT</a>
       </div>
-      <div class="platform-card-body">
-        <div class="platform-name">LinkedIn</div>
-        <div class="platform-desc">Thought leadership content, founder branding, company pages, and B2B content strategy for professional brands.</div>
-        <span class="platform-cta">View client work →</span>
-      </div>
+      <img src="https://lh3.googleusercontent.com/d/1l_NiaLgf8o-dUJQ3ikpvDZGt272odz2J" alt="Mental Health" class="uiux-card-img">
     </a>
 
-    <a href="marketing.html" class="platform-card">
-      <div class="platform-card-cover pinterest">
-        <svg class="platform-logo-svg" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+    <a href="uiux.html#beauty" class="uiux-card">
+      <div class="uiux-card-left">
+        <div class="uiux-card-tag">Website Redesign</div>
+        <div class="uiux-card-title">Beauty Rejuvenation<br>Center</div>
+        <div class="uiux-card-sub">Website Redesign</div>
+        <div class="uiux-card-desc">Built around story and consistency, the design delivers a refined visual identity shaped by modern aesthetics and cohesive visual language.</div>
+        <a href="uiux.html#beauty" class="btn-small">VIEW PROJECT</a>
       </div>
-      <div class="platform-card-body">
-        <div class="platform-name">Pinterest</div>
-        <div class="platform-desc">Visual boards, pin strategy, and discovery-focused content for lifestyle, fashion, beauty, and home decor brands.</div>
-        <span class="platform-cta">View client work →</span>
+      <img src="https://lh3.googleusercontent.com/d/1-U7uGANY1Mq-xtuCdBZOiWiVdkbedaWO" alt="Beauty Rejuvenation" class="uiux-card-img">
+    </a>
+
+    <a href="uiux.html#dentistry" class="uiux-card">
+      <div class="uiux-card-left">
+        <div class="uiux-card-tag">Website Redesign</div>
+        <div class="uiux-card-title">Dentistry Clinic</div>
+        <div class="uiux-card-sub">Website Redesign</div>
+        <div class="uiux-card-desc">Built around story and consistency, the design delivers a refined visual identity shaped by modern aesthetics and cohesive visual language.</div>
+        <a href="uiux.html#dentistry" class="btn-small">VIEW PROJECT</a>
       </div>
+      <img src="https://lh3.googleusercontent.com/d/1Py6Hyfg0Pgs659pEx91THs0EDyFc8pjw" alt="Dentistry" class="uiux-card-img">
     </a>
 
   </div>
+</section>
 
-  <div class="fade-up" style="margin-top: 20px; padding: 18px 24px; background: white; border-radius: 14px; border: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-    <span style="font-size: 12px; font-weight: 500; color: var(--text-soft); letter-spacing: 0.5px; white-space: nowrap;">Platforms I've also worked on:</span>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
-      <span style="font-size: 13px; font-weight: 500; color: var(--text-mid); padding: 5px 14px; border-radius: 20px; background: var(--cream2); border: 1px solid var(--border);">Facebook</span>
-      <span style="font-size: 13px; font-weight: 500; color: var(--text-mid); padding: 5px 14px; border-radius: 20px; background: var(--cream2); border: 1px solid var(--border);">Twitter / X</span>
-      <span style="font-size: 13px; font-weight: 500; color: var(--text-mid); padding: 5px 14px; border-radius: 20px; background: var(--cream2); border: 1px solid var(--border);">YouTube</span>
+<!-- SOCIAL MEDIA MARKETING -->
+<section id="marketing" style="padding:64px 40px; background:var(--white);">
+  <div class="mkt-header">
+    <h2 class="mkt-title">Social Media Marketing</h2>
+    <p class="mkt-sub">Strategy, content, campaigns, and brand storytelling across platforms and industries.</p>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Posts &amp; Reels</span><span class="pill">Carousel Content</span><span>Influencer Tie-Ups</span><span class="pill">Content Shoots</span><span>Ad Monitoring</span><span class="pill">Campaign Strategy</span><span>Hoardings &amp; OOH</span><span>Founder Personal Branding</span><span class="pill">Content Writing</span><span>Instagram · LinkedIn · Pinterest</span>
+      <span>Posts &amp; Reels</span><span class="pill">Carousel Content</span><span>Influencer Tie-Ups</span><span class="pill">Content Shoots</span><span>Ad Monitoring</span><span class="pill">Campaign Strategy</span><span>Hoardings &amp; OOH</span><span>Founder Personal Branding</span><span class="pill">Content Writing</span><span>Instagram · LinkedIn · Pinterest</span>
     </div>
   </div>
 
+  <div class="platform-cards">
+    <!-- Instagram -->
+    <a href="marketing.html" class="platform-card">
+      <div class="platform-card-cover" style="background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+      </div>
+      <div class="platform-card-body">
+        <div class="platform-card-name">Instagram</div>
+        <div class="platform-card-desc">Reels, carousels, stories, and feed strategy for brands across Real Estate, Beauty, Fashion, F&amp;B, and more.</div>
+        <a href="marketing.html" class="btn-outline-blue">VIEW CLIENT WORK</a>
+      </div>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="marketing.html" class="platform-card">
+      <div class="platform-card-cover" style="background: #0A66C2;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="3" stroke="white" stroke-width="1.8"/><path d="M7 10v7M7 7v.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M11 17v-4a2 2 0 014 0v4M11 10v7" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div class="platform-card-body">
+        <div class="platform-card-name">LinkedIn</div>
+        <div class="platform-card-desc">Thought leadership content, founder branding, company pages, and B2B content strategy for professional brands.</div>
+        <a href="marketing.html" class="btn-outline-blue">VIEW CLIENT WORK</a>
+      </div>
+    </a>
+
+    <!-- Pinterest -->
+    <a href="marketing.html" class="platform-card">
+      <div class="platform-card-cover" style="background: #E60023;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.8"/><path d="M12 7c-2.76 0-5 2.24-5 5 0 2.11 1.29 3.93 3.14 4.69-.04-.38-.08-.97.02-1.38l.56-2.38s-.14-.29-.14-.71c0-.67.39-1.17.87-1.17.41 0 .61.31.61.68 0 .41-.26 1.03-.4 1.6-.11.48.24.87.71.87.85 0 1.42-.9 1.42-2.19 0-1.15-.83-1.95-2.01-1.95-1.37 0-2.17 1.03-2.17 2.09 0 .41.16.85.35 1.09a.14.14 0 01.03.13l-.13.53c-.02.09-.08.11-.18.07C8.6 13.87 8 12.97 8 11.94c0-1.78 1.3-3.42 3.74-3.42 1.96 0 3.49 1.4 3.49 3.26 0 1.95-1.23 3.51-2.93 3.51-.57 0-1.11-.3-1.3-.65l-.35 1.32c-.13.49-.47 1.1-.7 1.47.53.16 1.08.25 1.66.25 2.76 0 5-2.24 5-5s-2.24-5-5-5z" fill="white"/></svg>
+      </div>
+      <div class="platform-card-body">
+        <div class="platform-card-name">Pinterest</div>
+        <div class="platform-card-desc">Visual boards, pin strategy, and discovery-focused content for lifestyle, fashion, beauty, and home decor brands.</div>
+        <a href="marketing.html" class="btn-outline-blue">VIEW CLIENT WORK</a>
+      </div>
+    </a>
+  </div>
+
+  <div class="mkt-platforms-strip">✦ Additional Platforms that I've worked on: &nbsp;<strong>Facebook</strong> &nbsp;·&nbsp; <strong>Twitter / X</strong> &nbsp;·&nbsp; <strong>YouTube</strong> &nbsp;·&nbsp; <strong>Email</strong></div>
 </section>
 
+<!-- E-COMMERCE SECTION BANNER -->
+<div class="section-banner">
+  <div class="section-banner-title"><span>*</span>E-Commerce Design</div>
+  <div class="section-banner-desc">High-converting Amazon storefront product listings, stationery, and social templates and brand stories that make shoppers stop and trust.</div>
+</div>
 
-<!-- ECOMMERCE -->
-<section id="ecommerce">
-  <div class="fade-up">
-    <div class="section-head-row">
+<!-- E-COMMERCE CARDS -->
+<section id="ecommerce" style="padding:64px 40px; background:var(--white);">
+  <div class="ecom-cards">
+
+    <div class="ecom-card">
+      <img src="https://lh3.googleusercontent.com/d/1d852rESLnVna9EBn0Xr4p0Vhv0_6GHYA" alt="MyParina" class="ecom-card-img">
       <div>
-        <h2 class="section-title">E-Commerce Design</h2>
-        <p class="section-sub">High-converting Amazon creatives: product images, A+ content, brand stores, and brand stories that make shoppers stop and trust.</p>
+        <div class="ecom-card-tags"><span class="tag-pill">Brand Story</span><span class="tag-pill">A+ Content</span></div>
+        <div class="ecom-card-title">MyParina</div>
+        <div class="ecom-card-sub">Skincare</div>
+        <div class="ecom-card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototypes.</div>
       </div>
     </div>
-    <div class="ecom-list">
 
-      <div class="ecom-row">
-        <div class="ecom-thumb"><img src="https://lh3.googleusercontent.com/d/1UFhVf_FY1QQGIEpDqQmFIdhp6YkAxtU8" alt="MyParina"></div>
-        <div class="ecom-row-center">
-          <div class="ecom-row-cat">Skincare</div>
-          <div class="ecom-row-brand">MyParina</div>
-          <div class="ecom-row-desc">Amazon A+ content, main product images, and brand store design for a skincare brand.</div>
-        </div>
-        <div class="ecom-row-right">
-          <span class="ecom-tag">Main Images</span>
-          <span class="ecom-tag">A+ Content</span>
-          <span class="ecom-tag">Brand Store</span>
-        </div>
-      </div>
-
-      <div class="ecom-row">
-        <div class="ecom-thumb"><img src="https://lh3.googleusercontent.com/d/104-171X8B5o9AI0SxH1GoEg7RPQz4o5j" alt="Mills &amp; Brown"></div>
-        <div class="ecom-row-center">
-          <div class="ecom-row-cat">Socks</div>
-          <div class="ecom-row-brand">Mills &amp; Brown</div>
-          <div class="ecom-row-desc">Vibrant main product images and A+ content designed to stand out on Amazon listings.</div>
-        </div>
-        <div class="ecom-row-right">
-          <span class="ecom-tag">Main Images</span>
-          <span class="ecom-tag">A+ Content</span>
-        </div>
-      </div>
-
-      <div class="ecom-row">
-        <div class="ecom-thumb"><img src="https://lh3.googleusercontent.com/d/1t0X2cDV2pqUS1S3GA31PjCzqhr7l_owJ" alt="OkCupid"></div>
-        <div class="ecom-row-center">
-          <div class="ecom-row-cat">Loungewear</div>
-          <div class="ecom-row-brand">OkCupid</div>
-          <div class="ecom-row-desc">Playful, on-brand main images and A+ content for a loungewear and activewear brand.</div>
-        </div>
-        <div class="ecom-row-right">
-          <span class="ecom-tag">Main Images</span>
-          <span class="ecom-tag">A+ Content</span>
-        </div>
-      </div>
-
-      <div class="ecom-row">
-        <div class="ecom-thumb"><img src="https://lh3.googleusercontent.com/d/18KNBbC3LtxUuCALWwQDl19wCysCBVW11" alt="Zevar Amaze"></div>
-        <div class="ecom-row-center">
-          <div class="ecom-row-cat">Jewellery</div>
-          <div class="ecom-row-brand">Zevar Amaze</div>
-          <div class="ecom-row-desc">Elegant main product images and a brand story that communicates craftsmanship and heritage.</div>
-        </div>
-        <div class="ecom-row-right">
-          <span class="ecom-tag">Main Images</span>
-          <span class="ecom-tag">Brand Story</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- CANVA -->
-<section id="canva" class="canva-bg">
-  <div class="fade-up">
-    <div class="section-head-row">
+    <div class="ecom-card">
+      <img src="https://lh3.googleusercontent.com/d/1o1QGU6cQWrNDPEHrx-RN0fO02G-3ajSa" alt="Mills & Brown" class="ecom-card-img">
       <div>
-        <h2 class="section-title">Canva Design</h2>
-        <p class="section-sub">Logos, brand identities, stationery, and social templates crafted to make brands unforgettable.</p>
+        <div class="ecom-card-tags"><span class="tag-pill">A+ Content</span><span class="tag-pill">EBC Images</span></div>
+        <div class="ecom-card-title">Mills &amp; Brown</div>
+        <div class="ecom-card-sub">Skincare</div>
+        <div class="ecom-card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototypes.</div>
       </div>
     </div>
-    <div class="canva-list">
 
-      <div class="canva-row">
-        <div class="canva-thumb"><img src="https://lh3.googleusercontent.com/d/1Tlbu2uQ8SKOYpzkKFAiTEbOhilPwNw0O" alt="BTRE Skincare"></div>
-        <div class="canva-row-center">
-          <div class="canva-row-cat">Brand Identity + Logo</div>
-          <div class="canva-row-name">BTRE</div>
-          <div class="canva-row-desc">Full brand identity including logo design, product label design, and visual language system.</div>
-        </div>
+    <div class="ecom-card">
+      <img src="https://lh3.googleusercontent.com/d/125YnEwrFu6fNXJW6Al9RIrQFttxfIZtg" alt="Ok Cupid" class="ecom-card-img">
+      <div>
+        <div class="ecom-card-tags"><span class="tag-pill">Brand Story</span><span class="tag-pill">A+ Content</span></div>
+        <div class="ecom-card-title">Ok Cupid</div>
+        <div class="ecom-card-sub">Skincare</div>
+        <div class="ecom-card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototypes.</div>
       </div>
-
-      <div class="canva-row">
-        <div class="canva-thumb"><img src="https://lh3.googleusercontent.com/d/10Q3fxAdIGhau5miE5n9vOVSYxfijTDwl" alt="UJC Advisors"></div>
-        <div class="canva-row-center">
-          <div class="canva-row-cat">Brand Identity + Logo + Social Media Design + Stationery</div>
-          <div class="canva-row-name">UJC Advisors</div>
-          <div class="canva-row-desc">Logo design and a library of social media post templates for a financial advisory firm.</div>
-        </div>
-      </div>
-
-      <div class="canva-row">
-        <div class="canva-thumb"><img src="https://lh3.googleusercontent.com/d/1NNLsyHBXPyiZOECzoQvnBP9Svv-FI_D9" alt="Beaumor"></div>
-        <div class="canva-row-center">
-          <div class="canva-row-cat">Logo</div>
-          <div class="canva-row-name">Beaumor</div>
-          <div class="canva-row-desc">Elegant, minimal logo for a beauty brand with a focus on refinement and femininity.</div>
-        </div>
-      </div>
-
-      <div class="canva-row">
-        <div class="canva-thumb"><img src="https://lh3.googleusercontent.com/d/16APVLljrcAM-WESCWoKOMVKqSxHnfM27" alt="Visiting Cards & Stationery"></div>
-        <div class="canva-row-center">
-          <div class="canva-row-cat">Stationery</div>
-          <div class="canva-row-name">Multi Brand</div>
-          <div class="canva-row-desc">Brand stationery, visiting card design, and mockup creation across multiple client brands.</div>
-        </div>
-      </div>
-
     </div>
-    <div style="text-align:center;margin-top:44px;">
-      <a href="https://www.behance.net/muskanshah" target="_blank" rel="noopener" class="btn-outline">View All Work</a>
+
+    <div class="ecom-card">
+      <img src="https://lh3.googleusercontent.com/d/1DcQMKnoCASPrqTaLYbwEUEygX0wDksIL" alt="Zevar Amaze" class="ecom-card-img">
+      <div>
+        <div class="ecom-card-tags"><span class="tag-pill">Brand Story</span><span class="tag-pill">3D Images</span></div>
+        <div class="ecom-card-title">Zevar Amaze</div>
+        <div class="ecom-card-sub">Skincare</div>
+        <div class="ecom-card-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototypes.</div>
+      </div>
     </div>
+
+  </div>
+  <div class="ecom-view-all">
+    <a href="#" class="btn-outline">VIEW ALL</a>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<!-- CANVA DESIGN -->
+<section id="canva" style="padding:64px 40px; background:var(--light-blue);">
+  <div class="canva-header">
+    <h2 class="canva-title">Canva Design</h2>
+    <p class="canva-sub">Logos, brand identities, stationery, and social templates crafted<br>to make brands unforgettable.</p>
+  </div>
+
+  <div class="canva-cards">
+    <a href="#" class="canva-card">
+      <img src="https://lh3.googleusercontent.com/d/1izncIFqx1rDgtJ5CpVhDIDiAv6Y3ygoN" alt="Brand Identity" class="canva-card-img">
+      <div class="canva-card-body">
+        <div class="canva-card-title">Brand Identity</div>
+        <div class="canva-card-sub">Logos, stationery, and visual systems for brands across sectors</div>
+      </div>
+    </a>
+    <a href="#" class="canva-card">
+      <img src="https://lh3.googleusercontent.com/d/1ko7hd5HZI88KI3QM4VLqRfJvLvjWxB__" alt="Logo" class="canva-card-img">
+      <div class="canva-card-body">
+        <div class="canva-card-title">Logo</div>
+        <div class="canva-card-sub">Custom logo design crafted for a beauty brand with timeless elegance</div>
+      </div>
+    </a>
+    <a href="#" class="canva-card">
+      <img src="https://lh3.googleusercontent.com/d/1HuK-6rEGJtpAWZxtRTKJkQeZltOJylz3" alt="Stationery" class="canva-card-img">
+      <div class="canva-card-body">
+        <div class="canva-card-title">Stationery</div>
+        <div class="canva-card-sub">Complete stationery set — brand cards, letter design, and company multiple client</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="canva-also">
+    I've also worked on: <span>Poster</span>·<span>Letterhead</span>·<span>Visiting Card</span>·<span>Flyer</span>·<span>Packaging</span>
+  </div>
+  <div style="text-align:center;">
+    <a href="#" class="btn-outline">VIEW ALL</a>
+  </div>
+</section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="fade-up">
-    <h2 class="section-title">The Person Behind<br><em style="font-style:italic;color:var(--brown)">the Work</em></h2>
+<section id="about" style="padding:80px 40px; background:var(--white);">
+  <div style="text-align:center; margin-bottom:64px;">
+    <h2 style="font-family:var(--serif); font-size:clamp(32px,5vw,56px); font-weight:700; line-height:1.2;">
+      ✦ The <em style="font-style:italic; color:var(--blue);">Person</em> Behind the Work.
+    </h2>
   </div>
-  <div class="about-grid" style="margin-top:50px">
-    <div class="about-photo-wrap fade-up">
-      <div class="about-photo-frame" style="background:none; padding:0;">
-        <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" alt="Muskan Shah" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-      </div>
-    </div>
-    <div class="about-content fade-up">
-      <p class="about-bio">I'm <strong>Muskan Shah</strong>, a designer, creative thinker, and storyteller passionate about turning ideas into meaningful experiences. My journey in design began with a background in product design and later evolved into design innovation and brand management during my master's in London. Spending two years there shaped the way I see creativity, culture, and human-centered design.</p>
-      <p class="about-bio" style="margin-top:-16px">Today, I bring that blend of strategy and creativity into everything I create — from UI/UX and visual design to brand storytelling and digital experiences. I love designing work that feels intuitive, engaging, and human because, to me, good design isn't just about visuals, it's about creating something people genuinely connect with.</p>
-      <div class="skills-section">
-        <div class="skills-section-title">Skills & Tools</div>
-        <div class="skills-pills">
-          <span class="s-pill">Figma</span><span class="s-pill">Canva</span><span class="s-pill">Miro</span><span class="s-pill">Claude AI</span><span class="s-pill">ChatGPT</span><span class="s-pill">Google Stitch</span><span class="s-pill">UI/UX Design</span><span class="s-pill">Graphic Design</span><span class="s-pill">Social Media Strategy</span><span class="s-pill">Brand Identity</span><span class="s-pill">Amazon A+ Content</span><span class="s-pill">Content Writing</span><span class="s-pill">Campaign Strategy</span><span class="s-pill">Instagram Growth</span><span class="s-pill">Reels & Short-Form Video</span><span class="s-pill">Wireframing</span><span class="s-pill">Prototyping</span>
-        </div>
-      </div>
-      <div class="outside-work-card">
-        <div class="owc-title">✨ A little bit about me outside my work</div>
-        <p class="owc-text">I am very outgoing and endlessly curious I always keep asking questions (sometimes too many). I love watching cricket, am a total café-hopper, and consider myself a big creative person. So much so that every single one of my friends' birthdays becomes a full design project for me. I'm a big people person and I believe the best ideas come from great conversations.</p>
-      </div>
-      <a href="#" download="Muskan_Shah_CV.pdf" onclick="downloadCV(event)" class="behance-link" id="cv-download">Get to know me ↓</a>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-bg">
-  <div class="contact-inner fade-up">
-    <h2 class="contact-title">Let's Create<br><em>Together.</em></h2>
-    <p class="contact-sub">Whether it's crafting intuitive UI/UX experiences, creating scroll-stopping social media content, or designing aesthetic brand visuals, we bring creativity, strategy, and personality into everything we create.</p>
-    <a href="mailto:pubashaworks@gmail.com" class="contact-email-link">pubashaworks@gmail.com</a>
-    <div class="social-links">
-      <a href="https://www.behance.net/muskanshah" target="_blank" rel="noopener" class="soc-btn">
-        Behance
-      </a>
-      <a href="https://www.linkedin.com/in/muskan-shah-837606184" target="_blank" rel="noopener" class="soc-btn">
-        LinkedIn
-      </a>
-      <a href="https://www.instagram.com/itsmuskiiiiiisworks/" target="_blank" rel="noopener" class="soc-btn">
-        Instagram
-      </a>
+  <div class="about-grid">
+    <img src="https://lh3.googleusercontent.com/d/1rwOho3wKKOcSFOtSNsNL9nASXHOotNZs" alt="Muskan Shah" class="about-photo">
+    <div class="about-right">
+      <p class="about-bio">I'm Muskan Shah, a designer, creative thinker, and problem solver passionate about turning ideas into meaningful experiences. My journey in design began with a background in business and marketing — allowing me to design with both empathy and strategy. Based in Ahmedabad with a master's degree from London, I've worked with USA clients across healthcare, hospitality, beauty, and real estate.</p>
+
+      <div class="about-skills-label">Skills &amp; Tools</div>
+      <div class="skills-pills">
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">Canva</span>
+        <span class="skill-pill">Miro</span>
+        <span class="skill-pill">Claude AI</span>
+        <span class="skill-pill">ChatGPT</span>
+        <span class="skill-pill">Google Stitch</span>
+        <span class="skill-pill">Graphic Design</span>
+        <span class="skill-pill">UI/UX Design</span>
+        <span class="skill-pill">Social Media Marketing</span>
+        <span class="skill-pill">E-Commerce Design</span>
+        <span class="skill-pill">Brand Identity</span>
+        <span class="skill-pill">Prototyping</span>
+      </div>
+
+      <div class="about-extra-label">A little bit about me outside my work</div>
+      <p class="about-extra-text">I call myself a family person — growing up watching our family beauty distribution business gave me an early appreciation for branding. When I'm not designing, you'll find me exploring new cafés, obsessing over fonts, or planning my next trip.</p>
     </div>
   </div>
 </section>
-<div class="footer-bar">© 2026 Muskan Shah · Designed with intention in Ahmedabad, Gujarat</div>
 
-<script>
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileMenu');
-  toggle.addEventListener('click', () => menu.classList.toggle('open'));
-  function closeMobile() { menu.classList.remove('open'); }
+<!-- CONTACT / FOOTER -->
+<section id="contact" style="background:var(--black); padding:80px 40px; text-align:center;">
+  <h2 class="footer-title">Let's Create <em>Together.</em></h2>
+  <p class="footer-sub">Whether it's crafting intuitive UI/UX experiences, compelling social media content, or designing high-converting e-commerce brands — let's build something great.</p>
+  <a href="mailto:pubashaworks@gmail.com" class="footer-email">pubashaworks@gmail.com</a>
+  <div class="footer-links">
+    <a href="https://www.behance.net" target="_blank" class="footer-link">Behance</a>
+    <a href="https://www.instagram.com/itsmuskiiiiiisworks" target="_blank" class="footer-link">Instagram</a>
+    <a href="https://www.linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+  </div>
+  <p class="footer-copy">© 2026 Muskan Shah · Designed with intention in Ahmedabad, Gujarat.</p>
+</section>
 
-  const faders = document.querySelectorAll('.fade-up');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  faders.forEach(f => obs.observe(f));
-
-  function downloadCV(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const b64 = "";
-    const byteChars = atob(b64);
-    const byteNums = new Array(byteChars.length);
-    for (let i = 0; i < byteChars.length; i++) { byteNums[i] = byteChars.charCodeAt(i); }
-    const byteArray = new Uint8Array(byteNums);
-    const blob = new Blob([byteArray], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = 'Muskan_Shah_CV.pdf';
-    document.body.appendChild(a); a.click();
-    document.body.removeChild(a); URL.revokeObjectURL(url);
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
-</script>
 </body>
 </html>
