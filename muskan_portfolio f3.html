@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muskan Shah — UI/UX Designer & Strategist</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,24 +18,26 @@
   --sans: 'Satoshi', 'DM Sans', sans-serif;
   --border: #E4E4E4;
   --soft: #555555;
+  --grey-bg: #F7F7F7;
 }
 html { scroll-behavior: smooth; }
 body { font-family: var(--sans); background: var(--white); color: var(--black); overflow-x: hidden; }
 
-/* NAV */
+/* ─── NAV ─── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   background: var(--white); border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 56px; height: 64px;
 }
-.nav-logo { font-family: var(--sans); font-weight: 700; font-size: 15px; color: var(--black); text-decoration: none; }
+.nav-logo { font-family: var(--sans); font-weight: 700; font-size: 15px; color: var(--black); text-decoration: none; letter-spacing: -0.3px; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 500; color: var(--black); text-decoration: none; }
+.nav-links a { font-size: 13px; font-weight: 500; color: var(--black); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--blue); }
 .nav-cta { background: var(--blue) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 100px; font-weight: 600 !important; }
+.nav-cta:hover { opacity: 0.88; }
 
-/* HERO */
+/* ─── HERO ─── */
 #hero {
   min-height: 100vh; padding: 120px 56px 80px;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -46,31 +48,27 @@ nav {
 .el-2 { bottom: 210px; right: 14%; }
 .el-3 { bottom: 200px; left: 11%; }
 .el-4 { top: 200px; right: 19%; }
-
 .badge { position: absolute; }
 .badge-left  { top: 148px; left: 7%; }
 .badge-right { bottom: 190px; right: 6%; }
 
-.hero-row1 {
-  display: flex; align-items: center; justify-content: center;
-  gap: 12px; margin-bottom: 0;
-}
+.hero-row1 { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .hero-hello { font-family: var(--serif); font-size: clamp(52px,6vw,84px); font-weight: 800; line-height: 1.05; }
 .hero-photo {
   width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
   border: 3px solid var(--yellow); flex-shrink: 0;
 }
 .hero-name { font-family: var(--serif); font-size: clamp(52px,6vw,84px); font-weight: 800; line-height: 1.05; }
-.hero-line2 { font-family: var(--serif); font-size: clamp(52px,6vw,84px); font-weight: 800; line-height: 1.05; margin-bottom: 4px; }
+.hero-line2 { font-family: var(--serif); font-size: clamp(52px,6vw,84px); font-weight: 800; line-height: 1.05; }
 .hero-line3 { font-family: var(--serif); font-size: clamp(52px,6vw,84px); font-weight: 800; font-style: italic; line-height: 1.05; margin-bottom: 32px; }
 .hero-sub { font-size: 15px; color: var(--soft); line-height: 1.75; max-width: 420px; margin: 0 auto 40px; }
 .hero-btns { display: flex; gap: 16px; justify-content: center; }
-.btn-dark { background: var(--black); color: var(--white); padding: 14px 36px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.btn-dark { background: var(--black); color: var(--white); padding: 14px 36px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
 .btn-dark:hover { background: var(--blue); }
-.btn-ghost { border: 1.5px solid var(--black); color: var(--black); padding: 13px 36px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.btn-ghost { border: 1.5px solid var(--black); color: var(--black); padding: 13px 36px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
 .btn-ghost:hover { background: var(--black); color: var(--white); }
 
-/* SECTION BANNER */
+/* ─── SECTION BANNER ─── */
 .s-banner {
   background: var(--blue); padding: 28px 56px;
   display: flex; align-items: center; justify-content: space-between; gap: 48px;
@@ -78,25 +76,26 @@ nav {
 .s-banner-title { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--white); font-style: italic; white-space: nowrap; }
 .s-banner-desc { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; max-width: 500px; }
 
-/* UIUX */
+/* ─── UI/UX ─── */
 #uiux { padding: 64px 56px; background: var(--white); }
 .uiux-list { display: flex; flex-direction: column; gap: 16px; }
 .uiux-card {
   border: 1px solid var(--border); border-radius: 20px;
-  display: grid; grid-template-columns: 1fr 280px;
+  display: grid; grid-template-columns: 1fr 300px;
   align-items: center; gap: 48px; padding: 40px 40px 40px 48px;
   text-decoration: none; color: inherit; background: var(--white);
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition: box-shadow 0.25s, transform 0.25s; overflow: hidden;
 }
 .uiux-card:hover { box-shadow: 0 8px 48px rgba(30,40,197,0.10); transform: translateY(-2px); }
 .uc-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
-.uc-title { font-family: var(--serif); font-size: 24px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+.uc-title { font-family: var(--serif); font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
 .uc-sub { font-size: 12px; font-weight: 600; color: #999; margin-bottom: 14px; }
 .uc-desc { font-size: 13px; color: var(--soft); line-height: 1.7; margin-bottom: 24px; max-width: 380px; }
 .btn-blue { display: inline-block; background: var(--blue); color: var(--white); padding: 11px 28px; border-radius: 100px; font-size: 11px; font-weight: 700; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
-.uc-img { width: 100%; height: 210px; object-fit: cover; border-radius: 14px; background: var(--lb); display: block; }
+.btn-blue:hover { opacity: 0.88; }
+.uc-img { width: 100%; height: 220px; object-fit: cover; border-radius: 14px; background: var(--lb); display: block; }
 
-/* MARKETING */
+/* ─── MARKETING ─── */
 #marketing { padding: 72px 56px; background: var(--white); }
 .sec-center { text-align: center; margin-bottom: 40px; }
 .sec-title { font-family: var(--serif); font-size: clamp(32px,4vw,52px); font-weight: 700; margin-bottom: 10px; }
@@ -116,60 +115,97 @@ nav {
 .plat-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
 .plat-name { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 8px; }
 .plat-desc { font-size: 13px; color: var(--soft); line-height: 1.65; margin-bottom: 20px; flex: 1; }
-.btn-ob { display: inline-block; border: 1.5px solid var(--blue); color: var(--blue); padding: 9px 22px; border-radius: 100px; font-size: 12px; font-weight: 600; text-decoration: none; align-self: flex-start; }
+.btn-ob { display: inline-block; border: 1.5px solid var(--blue); color: var(--blue); padding: 9px 22px; border-radius: 100px; font-size: 12px; font-weight: 600; text-decoration: none; align-self: flex-start; transition: all 0.2s; }
 .btn-ob:hover { background: var(--blue); color: var(--white); }
 .also-strip { text-align: center; font-size: 13px; color: #999; }
 .also-strip b { color: var(--black); }
 
-/* ECOMMERCE */
+/* ─── E-COMMERCE ─── */
 #ecommerce { padding: 64px 56px; background: var(--white); }
-.ecom-list { display: flex; flex-direction: column; gap: 16px; }
-.ecom-card { border: 1px solid var(--border); border-radius: 20px; display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 32px; padding: 28px 40px; background: var(--white); }
-.ecom-img { width: 140px; height: 100px; object-fit: cover; border-radius: 12px; background: var(--lb); display: block; flex-shrink: 0; }
-.ecom-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.ecom-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.ecom-card {
+  border: 1px solid var(--border); border-radius: 20px;
+  display: flex; flex-direction: column; overflow: hidden;
+  text-decoration: none; color: inherit; background: var(--white);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.ecom-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,40,197,0.08); }
+.ecom-img-wrap { width: 100%; height: 220px; overflow: hidden; background: var(--lb); }
+.ecom-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.ecom-card:hover .ecom-img { transform: scale(1.04); }
+.ecom-body { padding: 24px 28px; }
+.ecom-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
 .tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: var(--lb); color: var(--blue); padding: 3px 10px; border-radius: 100px; }
 .ecom-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 2px; }
-.ecom-sub { font-size: 12px; color: #aaa; margin-bottom: 8px; }
+.ecom-cat { font-size: 11px; color: #aaa; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .ecom-desc { font-size: 13px; color: var(--soft); line-height: 1.6; }
 .view-all { text-align: center; margin-top: 40px; }
 
-/* CANVA */
+/* ─── CANVA ─── */
 #canva { padding: 72px 56px; background: var(--lb); }
 .canva-italic { font-size: 14px; color: #777; font-style: italic; margin-top: 8px; }
 .canva-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-bottom: 28px; }
-.canva-card { background: var(--white); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.25s, box-shadow 0.25s; }
+.canva-card { background: var(--white); border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.25s, box-shadow 0.25s; border: 1px solid rgba(0,0,0,0.06); }
 .canva-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-.canva-img { width: 100%; height: 210px; object-fit: cover; background: var(--lb); display: block; }
-.canva-body { padding: 20px; }
+.canva-img-wrap { width: 100%; height: 220px; overflow: hidden; background: var(--lb); }
+.canva-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.canva-card:hover .canva-img { transform: scale(1.04); }
+.canva-body { padding: 20px 24px; }
 .canva-name { font-family: var(--serif); font-size: 18px; font-weight: 700; margin-bottom: 6px; }
 .canva-sub { font-size: 12px; color: #888; line-height: 1.5; }
 .canva-also { text-align: center; font-size: 13px; color: #888; margin-bottom: 24px; }
 .canva-also b { color: var(--black); margin: 0 4px; }
 
-/* ABOUT */
-#about { padding: 80px 56px; background: var(--white); }
+/* ─── ABOUT ─── */
+#about { padding: 88px 56px; background: var(--white); }
 .about-heading { text-align: center; font-family: var(--serif); font-size: clamp(32px,4.5vw,56px); font-weight: 700; line-height: 1.2; margin-bottom: 64px; }
 .about-heading em { font-style: italic; color: var(--blue); }
-.about-grid { display: grid; grid-template-columns: 480px 1fr; gap: 80px; align-items: start; max-width: 1100px; margin: 0 auto; }
-.about-photo { width: 100%; height: 600px; object-fit: cover; border-radius: 24px; background: var(--lb); display: block; }
-.about-bio { font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 40px; }
+.about-grid { display: grid; grid-template-columns: 420px 1fr; gap: 80px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.about-img-wrap { position: relative; }
+.about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 24px; background: var(--lb); display: block; }
+.about-bio { font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 24px; }
 .label-sm { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: block; }
 .skills-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
 .sp { font-size: 12px; font-weight: 500; background: var(--lb); color: var(--blue); padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(30,40,197,0.15); }
 .about-extra-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #aaa; margin-bottom: 12px; display: block; }
 .about-extra { font-size: 14px; color: #666; line-height: 1.75; font-style: italic; margin-bottom: 32px; }
 
-/* FOOTER */
-#contact { background: var(--black); padding: 88px 56px; text-align: center; }
+/* ─── FOOTER ─── */
+#contact { background: var(--black); padding: 96px 56px; text-align: center; }
 .footer-h { font-family: var(--serif); font-size: clamp(40px,6vw,80px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
 .footer-h em { font-style: italic; color: var(--yellow); }
 .footer-p { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 460px; margin: 0 auto 40px; line-height: 1.75; }
-.footer-email { font-size: 18px; font-weight: 600; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 4px; }
+.footer-email { font-size: 18px; font-weight: 600; color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 4px; display: inline-block; transition: color 0.2s; }
 .footer-email:hover { color: var(--yellow); }
 .footer-socials { display: flex; justify-content: center; gap: 32px; margin-top: 40px; }
-.footer-socials a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; }
+.footer-socials a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
 .footer-socials a:hover { color: var(--white); }
 .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 48px; }
+
+/* ─── MOBILE NAV TOGGLE ─── */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-toggle { display: flex; }
+  .nav-links { display: none; flex-direction: column; gap: 0; position: fixed; top: 64px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 16px 0; z-index: 998; }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 12px 24px; font-size: 15px; }
+  .nav-cta { margin: 8px 24px; border-radius: 100px; text-align: center; }
+  #hero { padding: 100px 24px 64px; }
+  .badge { display: none; }
+  .el-1, .el-2, .el-3, .el-4 { display: none; }
+  .s-banner { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  #uiux, #marketing, #ecommerce, #canva, #about, #contact { padding-left: 24px; padding-right: 24px; }
+  .uiux-card { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+  .plat-grid { grid-template-columns: 1fr; }
+  .ecom-grid { grid-template-columns: 1fr; }
+  .canva-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { aspect-ratio: 4/3; }
+}
 </style>
 </head>
 <body>
@@ -177,6 +213,9 @@ nav {
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Muskan Shah</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="#uiux">UI/UX</a></li>
     <li><a href="#marketing">Marketing</a></li>
@@ -190,7 +229,7 @@ nav {
 <!-- HERO -->
 <section id="hero">
 
-  <!-- Decorative Elements -->
+  <!-- Decorative floating elements -->
   <div class="hero-el el-1">
     <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a1)"><path d="M13.726 40c.026-4.59-2.273-9.11-7.127-11.749-1.88-1.022-4.085-1.356-6.255-1.624C9.119 26.147 11.97 18.207 13.038 12.088c-.286 5.47 3.199 11.283 10.031 11.655C16.368 27.33 14.198 33.66 13.726 40Zm14.182-25.815c.014-2.334-1.155-4.63-3.62-5.971-.956-.519-2.076-.688-3.179-.826 4.46-.243 5.907-4.278 6.451-7.388-.146 2.78 1.625 5.734 5.097 5.923C23.251 7.746 22.147 10.962 21.908 14.184v.001Z" fill="#FFE7A9" stroke="#1D1D1D" stroke-width=".997" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="a1"><rect width="33" height="40" fill="white"/></clipPath></defs></svg>
   </div>
@@ -212,7 +251,7 @@ nav {
     <svg width="183" height="86" viewBox="0 0 183 86" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#br0)"><rect x="36.928" y="17.641" width="101" height="46" rx="23" transform="rotate(13 36.928 17.641)" fill="#FFCC00"/><path d="M57.639 52.362c-3.131-.723-4.694-3.453-3.908-6.858.782-3.39 3.456-5.19 6.602-4.463 2.478.572 4.037 2.485 3.928 4.829l-1.596-.368c-.08-1.524-1.112-2.674-2.708-3.043-2.219-.512-4.064.823-4.657 3.392-.594 2.569.479 4.578 2.699 5.09 1.61.372 3.087-.2 3.81-1.457l1.581.365c-.977 2.08-3.274 3.087-5.752 2.515Zm12.206-5.252-.302 1.307-.638-.148c-1.353-.312-2.378.316-2.708 1.745l-.909 3.937-1.429-.33 1.712-7.417 1.338.308-.169 1.146c.483-.706 1.347-1.05 2.365-.815.259.06.465.14.74.267ZM72.04 55.703c-2.189-.505-3.329-2.433-2.796-4.744.537-2.326 2.383-3.596 4.542-3.098 2.112.488 3.159 2.266 2.65 4.47l-.123.532-5.749-1.311c-.255 1.59.366 2.646 1.779 2.972 1.11.256 1.945-.031 2.385-.826l1.337.309c-.733 1.512-2.187 2.12-4.026 1.696Zm1.47-6.641c-1.247-.288-2.209.274-2.693 1.539l4.286.99c.285-1.232-.331-2.238-1.593-2.53Zm5.35 7.215c-1.596-.369-2.331-1.483-2.019-2.836.316-1.368 1.531-1.984 3.31-1.717l2.383.358.049-.213c.287-1.246-.356-1.858-1.36-2.09-1.2-.277-2.007.097-2.214.994l-1.247-.288c.358-1.55 1.87-2.274 3.785-1.832 1.84.425 2.861 1.685 2.398 3.692l-1.077 4.666-1.216-.28.125-1.236c-.577.763-1.718 1.06-2.919.782Zm.667-1.014c1.353.312 2.377-.38 2.7-1.778l.09-.396-1.935-.287c-1.29-.17-1.919.197-2.087.927-.182.79.304 1.319 1.232 1.534Zm6.989 2.59-1.429-.33 1.44-6.232-1.459-.336.278-1.201 1.459.336.537-2.326 1.429.33-.537 2.326 1.459.337-.278 1.2-1.459-.336-1.44 6.233Zm5.252-8.474c-.517-.12-.844-.643-.724-1.16.123-.532.643-.844 1.16-.724.517.12.847.63.725 1.161-.12.517-.644.843-1.16.723Zm-2.822 9.034 1.716-7.432 1.429.33-1.716 7.432-1.43-.33Zm5.274 1.218-1.279-8.124 1.52.35.668 4.525c.097.759.166 1.431.182 1.915.234-.458.625-1.04 1.034-1.634l2.615-3.767 1.489.344-4.817 6.717-1.412-.326Zm8.163 2.077c-2.189-.505-3.329-2.433-2.796-4.744.537-2.326 2.383-3.596 4.542-3.098 2.112.488 3.159 2.266 2.65 4.47l-.123.532-5.75-1.311c-.255 1.59.366 2.646 1.78 2.972 1.11.256 1.945-.031 2.384-.826l1.338.309c-.733 1.512-2.186 2.12-4.025 1.696Zm1.47-6.641c-1.248-.288-2.21.274-2.694 1.539l4.287.99c.284-1.232-.332-2.238-1.594-2.53Z" fill="#1D1D1D"/><rect x="37.303" y="18.241" width="100" height="45" rx="22.5" transform="rotate(13 37.303 18.241)" stroke="#1D1D1D"/></g><g clip-path="url(#br1)"><path d="M39.28 16.25c-.353-.967-1.587-1.31-2.306-1.688l3.737-7.207c.238-.61.971-2.103.811-2.649-.161-.546-.964-1.203-1.447-1.418-.611-.236-1.535.643-2.083.814-.548.17-.786 1.555-1.139 2.136l-1.342.289.41-2.393c.215-1.256 1.317-3.235-1.114-4.079C33.403-.366 32.25 1.727 32.27 3.155L31.205 7.9c-.107-.15-1.355-1.362-1.602-1.404-.59-.355-.993-.078-1.542.092-.675.139-1.137.579-1.47 1.04-.129-.02-.226-.17-.355-.192-.59-.355-1.213-.461-1.759-.3-.817.246-1.428.792-1.708 1.651-.022.128-.15.106-.17.225L21.273 18.108c-.497 2.898 1.4 6.204 4.297 6.701l6.298 1.078c3.658.626 4.778-1.39 7.024-5.413.988-1.254.787-3.111.337-4.225l-.042.002-.003-.001Z" fill="white"/><path d="M31.288 7.757 32.325 1.705a1.757 1.757 0 0 1 2.535-.496 1.757 1.757 0 0 1 .527 2.054l-1.274 7.435 2.677-5.77c.549-.944 1.793-1.372 2.758-.952 1.074.571 1.502 1.815.953 2.758l-4.343 8.721M16.942 8.172l.888 3.135a1.756 1.756 0 0 1-1.462 2.477 1.757 1.757 0 0 1-1.977-1.483L13.374 9.165a1.757 1.757 0 0 1 2.621-1.986l.947 2.994Z" stroke="#1D1D1D" stroke-width="1.003" stroke-miterlimit="10" stroke-linecap="round"/><path d="M31.35 12.493a2.75 2.75 0 0 0 .239-2.169L30.723 7.062a1.757 1.757 0 0 0-3.478.994" stroke="#1D1D1D" stroke-width="1.003" stroke-miterlimit="10" stroke-linecap="round"/><path d="m33.054 19.858.849-1.148a.14.14 0 0 0-.04-.24l-4.322-2.034a1.757 1.757 0 0 1-.73-2.282 1.757 1.757 0 0 1 2.437-.597l5.965 1.541s4.656 1.571 2.203 6.087c-2.452 4.516-3.364 6.039-7.023 5.413l-6.298-1.08A5.277 5.277 0 0 1 22.273 18.527L23.818 8.025" stroke="#1D1D1D" stroke-width="1.003" stroke-miterlimit="10" stroke-linecap="round"/></g><g clip-path="url(#br2)"><path d="M178.722 54.214c-3.863.515-9.61 2.264-16.271.866M182.789 33.193c-4.178 4.011-14.606 12.605-22.893 14.89M156.009 43.432c1.687-2.869 5.654-8.99 8.032-10.537" stroke="#1D1D1D" stroke-width="1.004" stroke-miterlimit="10" stroke-linecap="round"/></g><defs><clipPath id="br0"><rect x="36.928" y="17.641" width="101" height="46" rx="23" transform="rotate(13 36.928 17.641)" fill="white"/></clipPath><clipPath id="br1"><rect width="21" height="26" fill="white" transform="translate(21)"/></clipPath><clipPath id="br2"><rect width="26" height="24" fill="white" transform="translate(156.87 31.12) rotate(4)"/></clipPath></defs></svg>
   </div>
 
-  <!-- Hero Text -->
+  <!-- Hero text -->
   <div class="hero-row1">
     <span class="hero-hello">Hello!</span>
     <img src="https://lh3.googleusercontent.com/d/1MKRR4U4BPODXHTyfmfTelD_8IINd-qkz" alt="Muskan" class="hero-photo">
@@ -227,73 +266,81 @@ nav {
   </div>
 </section>
 
-<!-- UIUX BANNER -->
+<!-- UI/UX BANNER -->
 <div class="s-banner">
   <div class="s-banner-title">✦ UI / UX Design</div>
   <div class="s-banner-desc">With my keen eye for detail and sharp critical thinking skills, I specialize in crafting captivating websites, products, and experiences.</div>
 </div>
 
-<!-- UIUX CARDS -->
+<!-- UI/UX CARDS -->
 <section id="uiux">
   <div class="uiux-list">
     <a href="uiux.html#hotel" class="uiux-card">
       <div>
         <div class="uc-tag">Application Design</div>
         <div class="uc-title">Hotel Operations<br>Task Management</div>
-        <div class="uc-sub">Application Design</div>
+        <div class="uc-sub">Orqaa — SaaS App</div>
         <div class="uc-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</div>
         <span class="btn-blue">VIEW PROJECT</span>
       </div>
-      <img src="https://lh3.googleusercontent.com/d/1EI2RO63nlNfB7j-wtHuPPu4lT_ESgrpK" alt="Hotel Ops" class="uc-img">
-    </a>
-    <a href="uiux.html#mentalhealth" class="uiux-card">
-      <div>
-        <div class="uc-tag">Website Redesign</div>
-        <div class="uc-title">Mental Health Clinic</div>
-        <div class="uc-sub">Website Redesign</div>
-        <div class="uc-desc">Empathy-first UX for a mental wellness clinic: calm visual design, accessible information architecture, and trust-building user journeys.</div>
-        <span class="btn-blue">VIEW PROJECT</span>
-      </div>
-      <img src="https://lh3.googleusercontent.com/d/1l_NiaLgf8o-dUJQ3ikpvDZGt272odz2J" alt="Mental Health" class="uc-img">
-    </a>
-    <a href="uiux.html#beauty" class="uiux-card">
-      <div>
-        <div class="uc-tag">Website Redesign</div>
-        <div class="uc-title">Beauty Rejuvenation<br>Center</div>
-        <div class="uc-sub">Website Redesign</div>
-        <div class="uc-desc">Built around clarity and consistency, this work defines a refined visual identity shaped by modern aesthetics and cohesive brand expression throughout.</div>
-        <span class="btn-blue">VIEW PROJECT</span>
-      </div>
-      <img src="https://lh3.googleusercontent.com/d/1-U7uGANY1Mq-xtuCdBZOiWiVdkbedaWO" alt="Beauty" class="uc-img">
+      <img src="https://lh3.googleusercontent.com/d/1EI2RO63nlNfB7j-wtHuPPu4lT_ESgrpK" alt="Hotel Ops App" class="uc-img">
     </a>
     <a href="uiux.html#dentistry" class="uiux-card">
       <div>
         <div class="uc-tag">Website Redesign</div>
-        <div class="uc-title">Dentistry Clinic</div>
-        <div class="uc-sub">Website Redesign</div>
-        <div class="uc-desc">Built around clarity and consistency, this work defines a refined visual identity shaped by modern aesthetics and cohesive brand expression throughout.</div>
+        <div class="uc-title">Dentistry Clinic<br>Website Redesign</div>
+        <div class="uc-sub">Eternal Smiles Dentistry</div>
+        <div class="uc-desc">Complete rebrand and website redesign: user research, visual identity, design system, and responsive high-fidelity prototype.</div>
         <span class="btn-blue">VIEW PROJECT</span>
       </div>
-      <img src="https://lh3.googleusercontent.com/d/1Py6Hyfg0Pgs659pEx91THs0EDyFc8pjw" alt="Dentistry" class="uc-img">
+      <img src="https://lh3.googleusercontent.com/d/1Py6Hyfg0Pgs659pEx91THs0EDyFc8pjw" alt="Dentistry Clinic" class="uc-img">
+    </a>
+    <a href="uiux.html#beauty" class="uiux-card">
+      <div>
+        <div class="uc-tag">Website Redesign</div>
+        <div class="uc-title">Beauty Rejuvenation<br>Centre Revamp</div>
+        <div class="uc-sub">Beverly Hills Rejuvenation</div>
+        <div class="uc-desc">Luxury med spa website revamp: brand audit, content restructure, new visual language, and high-fidelity responsive design.</div>
+        <span class="btn-blue">VIEW PROJECT</span>
+      </div>
+      <img src="https://lh3.googleusercontent.com/d/1-U7uGANY1Mq-xtuCdBZOiWiVdkbedaWO" alt="Beauty Rejuvenation" class="uc-img">
+    </a>
+    <a href="uiux.html#mental" class="uiux-card">
+      <div>
+        <div class="uc-tag">Website Redesign</div>
+        <div class="uc-title">Mental Health Clinic<br>Website Revamp</div>
+        <div class="uc-sub">Infinity Counselling Group</div>
+        <div class="uc-desc">Professional support clinic website revamp: compassionate UX, clarity-first information design, and accessible UI system.</div>
+        <span class="btn-blue">VIEW PROJECT</span>
+      </div>
+      <img src="https://lh3.googleusercontent.com/d/1l_NiaLgf8o-dUJQ3ikpvDZGt272odz2J" alt="Mental Health Clinic" class="uc-img">
     </a>
   </div>
 </section>
+
+<!-- MARKETING BANNER -->
+<div class="s-banner">
+  <div class="s-banner-title">✦ Social Media Marketing</div>
+  <div class="s-banner-desc">Strategy-led, scroll-stopping content across Instagram, LinkedIn, and Pinterest that builds brands and drives engagement.</div>
+</div>
 
 <!-- MARKETING -->
 <section id="marketing">
   <div class="sec-center">
     <h2 class="sec-title">Social Media Marketing</h2>
-    <p class="sec-sub">Strategy, content, campaigns, and brand storytelling across platforms and industries.</p>
+    <p class="sec-sub">1.5+ years managing 10+ accounts across Real Estate, Beauty, Fashion, F&amp;B, Events &amp; more.</p>
   </div>
+
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span>Posts &amp; Reels</span><span class="hi">Carousel Content</span><span>Influencer Tie-Ups</span><span class="hi">Content Shoots</span><span>Ad Monitoring</span><span class="hi">Campaign Strategy</span><span>Hoardings &amp; OOH</span><span>Founder Personal Branding</span><span class="hi">Content Writing</span><span>Instagram · LinkedIn · Pinterest</span>
-      <span>Posts &amp; Reels</span><span class="hi">Carousel Content</span><span>Influencer Tie-Ups</span><span class="hi">Content Shoots</span><span>Ad Monitoring</span><span class="hi">Campaign Strategy</span><span>Hoardings &amp; OOH</span><span>Founder Personal Branding</span><span class="hi">Content Writing</span><span>Instagram · LinkedIn · Pinterest</span>
+      <span class="hi">Real Estate</span><span>Beauty</span><span>Fashion</span><span>F&amp;B</span><span>Events</span><span>Finance</span><span>Lifestyle</span><span>Cosmetics</span><span>Education</span><span>Healthcare</span>
+      <span class="hi">Real Estate</span><span>Beauty</span><span>Fashion</span><span>F&amp;B</span><span>Events</span><span>Finance</span><span>Lifestyle</span><span>Cosmetics</span><span>Education</span><span>Healthcare</span>
     </div>
   </div>
+
   <div class="plat-grid">
     <a href="marketing.html" class="plat-card">
-      <div class="plat-cover" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
+      <div class="plat-cover" style="background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
         <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
       </div>
       <div class="plat-body">
@@ -307,7 +354,7 @@ nav {
         <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="white" stroke-width="1.5"/><line x1="7" y1="10" x2="7" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="7" y1="7" x2="7" y2="7.5" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-3.5a2.5 2.5 0 015 0V17" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="10" x2="11" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
       </div>
       <div class="plat-body">
-        <div class="plat-name">Linkedin</div>
+        <div class="plat-name">LinkedIn</div>
         <div class="plat-desc">Thought leadership content, founder branding, company pages, and B2B content strategy for professional brands.</div>
         <a href="marketing.html" class="btn-ob">VIEW CLIENT WORK</a>
       </div>
@@ -323,57 +370,75 @@ nav {
       </div>
     </a>
   </div>
-  <p class="also-strip">✦ Additional Platforms that I've worked on: &nbsp;<b>Facebook</b> &nbsp;·&nbsp; <b>Twitter / X</b> &nbsp;·&nbsp; <b>Youtube</b> &nbsp;·&nbsp; <b>Email</b></p>
+  <p class="also-strip">✦ Additional platforms I've worked on: &nbsp;<b>Facebook</b> &nbsp;·&nbsp; <b>Twitter / X</b> &nbsp;·&nbsp; <b>YouTube</b> &nbsp;·&nbsp; <b>Email</b></p>
 </section>
 
-<!-- ECOMMERCE BANNER -->
+<!-- E-COMMERCE BANNER -->
 <div class="s-banner">
   <div class="s-banner-title">✦ E-Commerce Design</div>
   <div class="s-banner-desc">High-converting Amazon creatives: product images, A+ content, brand stores, and brand stories that make shoppers stop and trust.</div>
 </div>
 
-<!-- ECOMMERCE -->
+<!-- E-COMMERCE -->
 <section id="ecommerce">
-  <div class="ecom-list">
+  <div class="sec-center">
+    <h2 class="sec-title">E-Commerce Design</h2>
+    <p class="sec-sub">Amazon product creatives, A+ content, brand stores, and listing images that convert.</p>
+  </div>
+  <div class="ecom-grid">
     <div class="ecom-card">
-      <img src="https://lh3.googleusercontent.com/d/1d852rESLnVna9EBn0Xr4p0Vhv0_6GHYA" alt="MyParina" class="ecom-img">
-      <div>
+      <div class="ecom-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1d852rESLnVna9EBn0Xr4p0Vhv0_6GHYA" alt="MyParina" class="ecom-img">
+      </div>
+      <div class="ecom-body">
         <div class="ecom-tags"><span class="tag">Main Images</span><span class="tag">Brand Store</span><span class="tag">A+ Content</span></div>
         <div class="ecom-title">MyParina</div>
-        <div class="ecom-sub">Skincare</div>
-        <div class="ecom-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</div>
+        <div class="ecom-cat">Skincare</div>
+        <div class="ecom-desc">Product listing images, A+ content modules, and brand store design for a skincare brand on Amazon India.</div>
       </div>
     </div>
     <div class="ecom-card">
-      <img src="https://lh3.googleusercontent.com/d/1o1QGU6cQWrNDPEHrx-RN0fO02G-3ajSa" alt="Mills Brown" class="ecom-img">
-      <div>
+      <div class="ecom-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1o1QGU6cQWrNDPEHrx-RN0fO02G-3ajSa" alt="Mills Brown" class="ecom-img">
+      </div>
+      <div class="ecom-body">
         <div class="ecom-tags"><span class="tag">A+ Content</span><span class="tag">Main Images</span></div>
         <div class="ecom-title">Mills &amp; Brown</div>
-        <div class="ecom-sub">Skincare</div>
-        <div class="ecom-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</div>
+        <div class="ecom-cat">Apparel / Socks</div>
+        <div class="ecom-desc">Main product images and A+ content for a fun, bold socks brand on Amazon — punchy visuals built to convert.</div>
       </div>
     </div>
     <div class="ecom-card">
-      <img src="https://lh3.googleusercontent.com/d/125YnEwrFu6fNXJW6Al9RIrQFttxfIZtg" alt="OkCupid" class="ecom-img">
-      <div>
+      <div class="ecom-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/125YnEwrFu6fNXJW6Al9RIrQFttxfIZtg" alt="OkCupid" class="ecom-img">
+      </div>
+      <div class="ecom-body">
         <div class="ecom-tags"><span class="tag">Main Images</span><span class="tag">A+ Content</span></div>
         <div class="ecom-title">Ok Cupid</div>
-        <div class="ecom-sub">Skincare</div>
-        <div class="ecom-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</div>
+        <div class="ecom-cat">Skincare / Beauty</div>
+        <div class="ecom-desc">High-converting product listing images and A+ content designed to communicate trust and quality on Amazon.</div>
       </div>
     </div>
     <div class="ecom-card">
-      <img src="https://lh3.googleusercontent.com/d/1DcQMKnoCASPrqTaLYbwEUEygX0wDksIL" alt="Zevar" class="ecom-img">
-      <div>
+      <div class="ecom-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1DcQMKnoCASPrqTaLYbwEUEygX0wDksIL" alt="Zevar Amaze" class="ecom-img">
+      </div>
+      <div class="ecom-body">
         <div class="ecom-tags"><span class="tag">Brand Story</span><span class="tag">Main Images</span></div>
         <div class="ecom-title">Zevar Amaze</div>
-        <div class="ecom-sub">Skincare</div>
-        <div class="ecom-desc">Full product design cycle: discovery research, information architecture, wireframes, brand identity, and high-fidelity prototype.</div>
+        <div class="ecom-cat">Jewellery</div>
+        <div class="ecom-desc">Brand story, main images, and A+ content for an elegant jewellery brand — designed to evoke luxury and trust.</div>
       </div>
     </div>
   </div>
   <div class="view-all"><a href="#" class="btn-ghost">VIEW ALL</a></div>
 </section>
+
+<!-- CANVA BANNER -->
+<div class="s-banner">
+  <div class="s-banner-title">✦ Canva Design</div>
+  <div class="s-banner-desc">Brand identities, logos, stationery, and visual templates crafted with precision to make brands truly unforgettable.</div>
+</div>
 
 <!-- CANVA -->
 <section id="canva">
@@ -383,28 +448,34 @@ nav {
   </div>
   <div class="canva-grid">
     <a href="#" class="canva-card">
-      <img src="https://lh3.googleusercontent.com/d/1izncIFqx1rDgtJ5CpVhDIDiAv6Y3ygoN" alt="Brand Identity" class="canva-img">
+      <div class="canva-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1izncIFqx1rDgtJ5CpVhDIDiAv6Y3ygoN" alt="Brand Identity" class="canva-img">
+      </div>
       <div class="canva-body">
         <div class="canva-name">Brand Identity</div>
-        <div class="canva-sub">Reels, carousels, stories, and feed strategy for brands across Real Estate, Beauty.</div>
+        <div class="canva-sub">Moodboards, colour palettes, typography systems, and brand guidelines crafted for multiple clients.</div>
       </div>
     </a>
     <a href="#" class="canva-card">
-      <img src="https://lh3.googleusercontent.com/d/1ko7hd5HZI88KI3QM4VLqRfJvLvjWxB__" alt="Logo" class="canva-img">
+      <div class="canva-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1ko7hd5HZI88KI3QM4VLqRfJvLvjWxB__" alt="Logo Design" class="canva-img">
+      </div>
       <div class="canva-body">
-        <div class="canva-name">Logo</div>
-        <div class="canva-sub">Elegant, minimal logo for a beauty brand with a focus on refinement and femininity.</div>
+        <div class="canva-name">Logo Design</div>
+        <div class="canva-sub">Elegant, minimal logos for beauty, finance, and lifestyle brands with a focus on refinement and character.</div>
       </div>
     </a>
     <a href="#" class="canva-card">
-      <img src="https://lh3.googleusercontent.com/d/1HuK-6rEGJtpAWZxtRTKJkQeZltOJylz3" alt="Stationery" class="canva-img">
+      <div class="canva-img-wrap">
+        <img src="https://lh3.googleusercontent.com/d/1HuK-6rEGJtpAWZxtRTKJkQeZltOJylz3" alt="Stationery" class="canva-img">
+      </div>
       <div class="canva-body">
         <div class="canva-name">Stationery</div>
-        <div class="canva-sub">Brand stationery, visiting card design, and mockup creation across multiple client.</div>
+        <div class="canva-sub">Brand stationery, visiting card design, and professional print collateral for multiple clients across industries.</div>
       </div>
     </a>
   </div>
-  <p class="canva-also">I've also worked on: <b>Poster</b> · <b>Letterhead</b> · <b>Visiting Card</b> · <b>Posts</b> · <b>Packaging</b></p>
+  <p class="canva-also">I've also worked on: <b>Posters</b> · <b>Letterheads</b> · <b>Visiting Cards</b> · <b>Social Posts</b> · <b>Packaging</b></p>
   <div style="text-align:center;"><a href="#" class="btn-ghost">VIEW ALL</a></div>
 </section>
 
@@ -412,7 +483,9 @@ nav {
 <section id="about">
   <h2 class="about-heading">The <em>Person</em> Behind the Work</h2>
   <div class="about-grid">
-    <img src="https://lh3.googleusercontent.com/d/1rwOho3wKKOcSFOtSNsNL9nASXHOotNZs" alt="Muskan Shah" class="about-photo">
+    <div class="about-img-wrap">
+      <img src="https://lh3.googleusercontent.com/d/1rwOho3wKKOcSFOtSNsNL9nASXHOotNZs" alt="Muskan Shah" class="about-photo">
+    </div>
     <div>
       <p class="about-bio">I'm Muskan Shah, a designer, creative thinker, and storyteller passionate about turning ideas into meaningful experiences. My journey in design began with a background in product design and later evolved into design innovation and brand management during my master's in London. Spending two years there shaped the way I see creativity, culture, and human-centered design.</p>
       <p class="about-bio">Today, I bring that blend of strategy and creativity into everything I create — from UI/UX and visual design to brand storytelling and digital experiences. I love designing work that feels intuitive, engaging, and human because, to me, good design isn't just about visuals, it's about creating something people genuinely connect with.</p>
@@ -421,20 +494,20 @@ nav {
         <span class="sp">Figma</span><span class="sp">Canva</span><span class="sp">Miro</span><span class="sp">Claude AI</span><span class="sp">ChatGPT</span><span class="sp">Google Stitch</span><span class="sp">UI/UX Design</span><span class="sp">Social Media Strategy</span><span class="sp">Prototyping</span><span class="sp">Graphic Design</span><span class="sp">Wireframing</span>
       </div>
       <span class="about-extra-label">A little bit about me outside my work</span>
-      <p class="about-extra">I am very outgoing and endlessly curious — I always keep asking questions (sometimes too many). I love watching cricket, am a total café-hopper, and consider myself a big creative person. So much so that every single one of my friends and family's birthdays becomes a full design project for me. I'm a big people person and I believe the best ideas come from great conversations.</p>
+      <p class="about-extra">I am very outgoing and endlessly curious — I always keep asking questions (sometimes too many). I love watching cricket, am a total cafe-hopper, and consider myself a big creative person. So much so that every single one of my friends and family's birthdays becomes a full design project for me. I'm a big people person and I believe the best ideas come from great conversations.</p>
       <a href="#contact" class="btn-blue" style="margin-top:8px;">GET TO KNOW ME MORE</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER / CONTACT -->
 <section id="contact">
   <h2 class="footer-h">Let's Create <em>Together.</em></h2>
-  <p class="footer-p">Whether it's crafting intuitive UI/UX experiences, creating scroll-stopping social media content, or designing aesthetic brand visuals, we bring creativity, strategy, and personality into everything we create.</p>
-  <a href="mailto:muskan905@gmail.com" class="footer-email">muskan905@gmail.com</a>
+  <p class="footer-p">Whether it's crafting intuitive UI/UX experiences, creating scroll-stopping social media content, or designing aesthetic brand visuals, I bring creativity, strategy, and personality into everything I create.</p>
+  <a href="mailto:pubashaworks@gmail.com" class="footer-email">pubashaworks@gmail.com</a>
   <div class="footer-socials">
     <a href="https://www.behance.net/muskanshah" target="_blank">Behance</a>
-    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/muskan-shah-837606184" target="_blank">LinkedIn</a>
     <a href="https://www.instagram.com/itsmuskiiiiiisworks" target="_blank">Instagram</a>
   </div>
   <p class="footer-copy">© 2026 Muskan Shah · Designed with intention in Ahmedabad, Gujarat</p>
