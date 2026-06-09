@@ -178,7 +178,7 @@ nav {
 }
 
 /* ─── MARKETING ─── */
-#marketing { padding: 64px 60px; background: var(--white); }
+#marketing { padding: 64px 60px; background: var(--lb); }
 .sec-center { text-align: center; margin-bottom: 36px; }
 .sec-title {
   font-family: var(--serif); font-size: clamp(32px,4vw,48px);
@@ -188,34 +188,35 @@ nav {
 
 /* Scrolling tags row */
 .tags-scroll-wrap {
-  overflow: hidden; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
-  padding: 10px 0; margin-bottom: 48px;
+  overflow: hidden; padding: 4px 0; margin-bottom: 48px;
 }
 .tags-scroll-track {
-  display: flex; gap: 0; animation: scrolltags 28s linear infinite; width: max-content;
+  display: flex; gap: 10px; animation: scrolltags 28s linear infinite; width: max-content;
 }
 .tags-scroll-track .stag {
-  font-size: 12px; color: #666; padding: 5px 20px;
-  border-right: 1px solid #ddd; white-space: nowrap;
+  font-size: 12px; color: #555; padding: 6px 18px; white-space: nowrap;
+  border: 1.5px solid #cdd0e8; border-radius: 100px; background: transparent;
 }
 .tags-scroll-track .stag.active {
-  background: var(--lb); color: var(--blue); font-weight: 600;
-  border-radius: 100px; border-right: none; margin-right: 16px; padding: 5px 16px;
+  background: var(--blue); color: var(--white); font-weight: 600;
+  border-radius: 100px; border-color: var(--blue); padding: 6px 18px;
 }
 @keyframes scrolltags { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Platform cards: 3 col, icon square top, content below, NO border */
 .plat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 32px; }
 .plat-card {
-  border-radius: 16px; overflow: hidden;
+  border-radius: 20px; overflow: hidden;
   text-decoration: none; color: inherit;
-  background: var(--white); border: 1px solid var(--border);
+  background: var(--white); border: none;
+  box-shadow: 0 2px 16px rgba(30,40,197,0.07);
   display: flex; flex-direction: column;
   transition: transform 0.25s, box-shadow 0.25s;
 }
-.plat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+.plat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(30,40,197,0.13); }
 .plat-icon-area {
-  height: 180px; display: flex; align-items: center; justify-content: center;
+  height: 200px; display: flex; align-items: center; justify-content: center;
+  border-radius: 0;
 }
 .plat-icon-area svg { width: 64px; height: 64px; }
 .plat-body { padding: 20px 24px 28px; flex: 1; display: flex; flex-direction: column; }
@@ -229,13 +230,15 @@ nav {
 .btn-ob:hover { background: var(--blue); color: var(--white); }
 
 .also-strip {
-  text-align: center; font-size: 13px; color: #999;
-  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+  text-align: center; font-size: 13px; color: #888;
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  background: var(--white); border-radius: 100px; padding: 14px 32px;
+  box-shadow: 0 2px 12px rgba(30,40,197,0.07); width: fit-content; margin: 0 auto;
 }
-.also-strip .also-label { color: #999; }
+.also-strip .also-label { color: #888; display: flex; align-items: center; gap: 6px; }
 .also-strip .also-pill {
-  background: #F3F3F3; color: #333; font-weight: 600;
-  padding: 4px 14px; border-radius: 100px; font-size: 12px;
+  background: var(--lb); color: var(--blue); font-weight: 600;
+  padding: 4px 16px; border-radius: 100px; font-size: 12px;
 }
 
 /* ─── E-COMMERCE ─── */
